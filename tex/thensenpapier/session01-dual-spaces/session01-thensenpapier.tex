@@ -1,0 +1,307 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\usepackage{cleveref}
+
+\usepackage[backend=biber,style=numeric-comp,sorting=none]{biblatex}
+\addbibresource{../../bibliography/clifford-seminar-group.bib}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\ev}{\operatorname{ev}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\Hom}{\operatorname{Hom}}
+
+\title{\Large\bfseries Thesenpapier: Dual Spaces, Multilinear Forms, and
+  Quadratic Spaces\\[0.3em]
+\large Foundational Session~1 --- Clifford Seminar}
+\author{Clifford Seminar Group\\
+\small Julian L. Avila-Martinez\\
+\small Universidad Distrital Francisco Jos{\'e} de Caldas}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Foundational Definitions}
+\label{sec:definitions}
+
+\subsection{Groups, Linear Spaces, and Algebras}
+\label{subsec:linear_spaces}
+
+Let $G$ be a set equipped with an internal binary operation
+$\cdot : G \times G \to G$.
+The pair $(G, \cdot)$ constitutes a group if the operation satisfies the
+following three conditions:
+\begin{enumerate}
+  \item[$\mathcal{G}_1$] Associativity: $(a \cdot b) \cdot c = a \cdot (b \cdot
+    c)$ for all $a, b, c \in G$.
+  \item[$\mathcal{G}_2$] Identity element: there exists an element $e \in G$
+    such that $e \cdot a = a \cdot e = a$ for every $a \in G$.
+  \item[$\mathcal{G}_3$] Inverse element: for each $a \in G$, there exists an
+    element $a^{-1} \in G$ such that $a \cdot a^{-1} = a^{-1} \cdot a = e$.
+\end{enumerate}
+If $a \cdot b = b \cdot a$ holds for all $a, b \in G$, the group is abelian.
+An abelian group is written additively as $(V, +)$, with identity element $0$
+and inverse $-v$.
+
+Let $K$ be a field.
+A linear space over $K$ is an additive abelian group $(V, +)$ equipped with an
+external scalar multiplication $\cdot : K \times V \to V$, denoted $(\lambda, v)
+\mapsto \lambda v$, satisfying the following conditions for all $\lambda, \mu
+\in K$ and all $u, v \in V$:
+\begin{enumerate}
+  \item Distributivity over group addition: $\lambda (u + v) = \lambda u +
+    \lambda v$.
+  \item Distributivity over field addition: $(\lambda + \mu) v = \lambda v + \mu
+    v$.
+  \item Compatibility with field multiplication: $\lambda (\mu v) = (\lambda
+    \mu) v$.
+  \item Unitary action: $1_K v = v$, where $1_K$ denotes the multiplicative
+    identity of $K$.
+\end{enumerate}
+The designation \emph{vector space} is reserved strictly for concrete coordinate
+realizations such as $\R^n$ or explicit geometric displacement spaces.
+
+Let $V$ be a linear space over $K$.
+The structure $(A, +, \cdot, \bullet)$ is a $K$-algebra if $(A, +, \cdot)$ is a
+linear space over $K$ equipped with a bilinear binary operation $\bullet : A
+\times A \to A$, satisfying for all $\lambda \in K$ and $u, v, w \in A$ the
+compatibility conditions
+\begin{equation}
+  u \bullet (v + w) = u \bullet v + u \bullet w, \quad
+  (u + v) \bullet w = u \bullet w + v \bullet w,
+\end{equation}
+and
+\begin{equation}
+  \lambda (u \bullet v) = (\lambda u) \bullet v = u \bullet (\lambda v).
+\end{equation}
+The algebra is associative if $(u \bullet v) \bullet w = u \bullet (v \bullet
+w)$, and unital if there exists an element $1_A \in A$ such that $1_A \bullet u
+= u \bullet 1_A = u$ for all $u \in A$.
+
+\subsection{Dual Spaces and the Canonical Pairing}
+\label{subsec:dual_spaces}
+
+Let $V$ be a linear space over $K$.
+The dual space $V^*$ is the linear space of all linear functionals on $V$,
+\begin{equation}
+  V^* = \Hom_K(V, K).
+\end{equation}
+The evaluation of a functional $\alpha \in V^*$ on an element $v \in V$ is
+expressed by the bilinear dual pairing
+\begin{equation}
+  \langle \cdot, \cdot \rangle : V^* \times V \to K, \quad
+  \langle \alpha, v \rangle = \alpha(v).
+\end{equation}
+The double dual space is $V^{**} = \Hom_K(V^*, K)$.
+The canonical evaluation mapping $\ev : V \to V^{**}$ defined by
+\begin{equation}
+  \ev_v(\alpha) = \langle \alpha, v \rangle
+\end{equation}
+is an injective linear homomorphism.
+When $\dim V < \infty$, the map $\ev$ is an isomorphism.
+Consequently, elements of $V$ act natively as linear functionals on $V^*$
+without auxiliary structure.
+
+\subsection{The Free Tensor Algebra}
+\label{subsec:tensor_algebra}
+
+The tensor algebra of a linear space $V$ over $K$ is the graded associative
+$K$-algebra
+\begin{equation}
+  T(V) = \bigoplus_{r=0}^\infty T^r(V),
+\end{equation}
+where $T^0(V) = K$, $T^1(V) = V$, and $T^r(V) = \bigotimes^r V$ for $r \ge 2$.
+Multiplication is governed by the associative tensor product $\otimes$.
+The structure $T(V)$ satisfies a universal property: every linear map from $V$
+into an associative unital $K$-algebra $A$ extends uniquely to a unital algebra
+homomorphism from $T(V)$ into $A$.
+The tensor algebra imposes no algebraic relations between distinct elements
+of $V$.
+
+\subsection{Quadratic Forms and Polarization}
+\label{subsec:quadratic_forms}
+
+Let $V$ be a real linear space.
+A map $q : V \to \R$ is a quadratic form if it satisfies $q(\alpha v) = \alpha^2
+q(v)$ for all $\alpha \in \R$ and $v \in V$, and the associated symmetric
+bilinear form $b : V \times V \to \R$ defined by the polarization identity
+\begin{equation}
+  b(u, v) = \frac{1}{2} \bigl( q(u + v) - q(u) - q(v) \bigr)
+\end{equation}
+is linear in each argument.
+The radical of the quadratic space $(V, q)$ is the subspace
+\begin{equation}
+  \rad(V) = \{ u \in V \mid b(u, v) = 0 \text{ for all } v \in V \}.
+\end{equation}
+The space $(V, q)$ is non-degenerate if $\rad(V) = \{0\}$.
+
+A symmetric bilinear form induces a linear mapping $b^\flat : V \to V^*$ given
+by $b^\flat(u) = b(u, \cdot)$.
+Non-degeneracy of $q$ is equivalent to $b^\flat$ being an isomorphism, whose
+inverse is denoted $b^\sharp : V^* \to V$.
+
+By Sylvester's law of inertia, any finite-dimensional real quadratic space
+decomposes into an orthogonal direct sum $V = V_+ \oplus V_- \oplus V_0$ such
+that $q|_{V_+}$ is positive definite, $q|_{V_-}$ is negative definite, and
+$q|_{V_0} = 0$.
+In the non-degenerate case, $\dim V_0 = 0$, and the signature is denoted $(p,
+m)$, where $p = \dim V_+$ and $m = \dim V_-$.
+The resulting pseudo-Euclidean vector space is denoted $\R^{p,m}$.
+
+\section{Physical Foundations: Kinematics versus Measurement}
+\label{sec:physics}
+
+In classical Lagrangian mechanics on a configuration manifold $M$, generalized
+velocities $\dot{x}$ belong to the tangent space $T_x M$, which is a linear
+space of directional derivations.
+In contrast, generalized forces and canonical momenta $p_i =
+\partial_{\dot{x}^i} L$ reside in the cotangent space $T_x^* M$, which is the
+dual linear space.
+The pairing $\langle p, \dot{x} \rangle$ represents the mechanical work rate and
+requires no metric structure.
+
+The conventional identification of velocities with momenta in Newtonian
+mechanics relies on the kinetic metric $b(u, v) = m \sum_i u^i v^i$, which
+supplies the isomorphism $b^\flat : T_x M \to T_x^* M$.
+Kinetic energy $T = \frac{1}{2} q(\dot{x})$ is not a linear invariant, but the
+evaluation of this specific quadratic form.
+
+In relativistic mechanics, the causal structure of spacetime is established
+prior to the introduction of coordinates or curved geometry.
+Given the real linear space $V$ of spacetime displacements, the choice of a
+non-degenerate quadratic form of signature $(1, 3)$ divides $V$ into timelike
+($q(v) > 0$), spacelike ($q(v) < 0$), and lightlike ($q(v) = 0$) elements.
+Light cones are the algebraic zero-sets of $q$, demonstrating that relativistic
+causality is an algebraic property of quadratic spaces.
+
+\section{Derivation Agenda for the Blackboard Exposition}
+\label{sec:agenda}
+
+The 40-minute Referat follows four sequential stages:
+\begin{enumerate}
+  \item Axiomatic synthesis of linear spaces from additive abelian groups and
+    external field actions, followed by the coordinate-free definition of $V^*$
+    and the canonical isomorphism $V \cong V^{**}$.
+  \item Construction of the free tensor algebra $T(V)$ as the maximal
+    multilinear structure, demonstrating its infinite-dimensional, relation-free
+    nature.
+  \item Introduction of the quadratic form $q$, derivation of the symmetric
+    bilinear form via the polarization identity, and the construction of the
+    musical isomorphisms $b^\flat$ and $b^\sharp$.
+  \item Orthogonal decomposition of non-degenerate quadratic spaces, proof of
+    signature invariance, and classification of isotropic rays $q(v) = 0$.
+\end{enumerate}
+
+\section{Theses for Plenary Discussion}
+\label{sec:theses}
+
+\begin{description}
+  \item[Thesis I]
+    The standard textbook practice of identifying velocities with canonical
+    momenta via Cartesian index identification ($p_i = m \dot{x}_i$) obscures
+    the duality between $V$ and $V^*$.
+    This obscures the geometric foundation of Hamiltonian mechanics and creates
+    conceptual barriers when transitioning to curved manifolds or relativistic
+    field theories.
+
+  \item[Thesis II]
+    The free tensor algebra $T(V)$ contains excess degrees of freedom that lack
+    geometric meaning.
+    A physical geometry cannot emerge from multilinear algebra until an
+    algebraic ideal generated by measurement---specifically the quadratic form
+    $q(v)$---is factored out.
+
+  \item[Thesis III]
+    A metric is not an intrinsic property of a linear space, but an auxiliary
+    constitutive mapping $b^\flat : V \to V^*$ that converts displacements into
+    linear measurement functionals.
+
+  \item[Thesis IV]
+    Causal structure in relativistic physics is an algebraic consequence of the
+    signature $(1, 3)$ on a four-dimensional linear space, independent of
+    differential geometry or pseudo-Riemannian metric tensors.
+\end{description}
+
+\section{Preparatory Exercises}
+\label{sec:exercises}
+
+\begin{enumerate}
+  \item Consider the set $\mathcal{U}$ of coherent physical units generated by
+    the base units of the International System of Units (SI).
+    Let group addition on $\mathcal{U}$ be defined by physical unit
+    multiplication (for example, $\mathrm{m} \cdot \mathrm{s} = \mathrm{m\,s}$
+    and $\mathrm{m} \cdot \mathrm{m} = \mathrm{m}^2$), and define external
+    scalar multiplication by $\Q$ as unit exponentiation,
+    $(\lambda, u) \mapsto u^\lambda$.
+    Show that $(\mathcal{U}, \cdot)$ satisfies the axioms of an additive
+    abelian group, with the dimensionless unit $1$ serving as identity, and
+    verify that this structure satisfies all axioms of a linear space over $\Q$.
+
+  \item Let the ordered set of seven base units $\mathcal{B} = \{\mathrm{m},
+      \mathrm{kg}, \mathrm{s}, \mathrm{A}, \mathrm{K}, \mathrm{mol},
+    \mathrm{cd}\}$ form a basis for the SI linear space over $\Q$.
+    Determine the explicit coordinate tuples in $\Q^7$ corresponding to:
+    \begin{enumerate}
+      \item The Newton ($\mathrm{N}$), unit of mechanical force.
+      \item The Farad ($\mathrm{F}$), unit of electrical capacitance.
+      \item The Lumen ($\mathrm{lm}$), unit of luminous flux.
+    \end{enumerate}
+
+  \item Let $V$ be a finite-dimensional linear space over $K$, and let
+    $\mathcal{E} = \{e_i\}_{i=1}^n$ be a basis for $V$.
+    The dual basis $\mathcal{E}^* = \{\omega^j\}_{j=1}^n \subset V^*$ is
+    defined by $\langle \omega^j, e_i \rangle = \delta^j_i$.
+    Show that the mapping $e_i \mapsto \omega^i$ depends explicitly on the
+    choice of basis, confirming that no canonical isomorphism between $V$ and
+    $V^*$ exists.
+    In contrast, prove that the evaluation map $\ev : V \to V^{**}$ defined by
+    $\ev_v(\alpha) = \langle \alpha, v \rangle$ is completely basis-independent
+    and canonical.
+
+  \item In classical mechanics, consider a free particle on $\R^3$ described by
+    the Lagrangian $L(v) = \frac{1}{2} m b(v, v)$, where $b$ is a symmetric,
+    positive-definite bilinear form.
+    Show that the definition of canonical momentum $p = \partial_v L$ is
+    identical to the action of the musical isomorphism $b^\flat : V \to V^*$.
+    Compute $b^\sharp : V^* \to V$ and show that the classical Hamiltonian
+    $H(p) = \langle p, v \rangle - L(v)$ corresponds to the inverse quadratic
+    form on the dual space.
+
+  \item Consider the real linear space $V = \R^4$ equipped with the Minkowski
+    quadratic form $q(x) = (x^0)^2 - (x^1)^2 - (x^2)^2 - (x^3)^2$.
+    \begin{enumerate}
+      \item Apply the polarization identity to determine the explicit
+        symmetric bilinear form $b(x, y)$.
+      \item Show that $\rad(V) = \{0\}$, establishing non-degeneracy.
+      \item A linear subspace $W \subset V$ is totally isotropic if $q|_W = 0$.
+        Prove that the maximum dimension of any totally isotropic subspace in
+        $\R^{1,3}$ is $1$, and explain why physical light rays cannot form a
+        two-dimensional planar subspace.
+    \end{enumerate}
+\end{enumerate}
+
+\section{Preparatory Literature}
+\label{sec:literature}
+
+Participants are expected to study the following references prior to the
+session:
+\begin{itemize}
+  \item Abstract groups and linear spaces: Fraleigh
+    \cite[Chaps.~1.1, 1.2, and~7.33]{fraleighFirstCourseAbstract2021}; Axler
+    \cite[Chaps.~1 and~2]{axlerLinearAlgebraDone2015}.
+  \item Dual spaces, multilinear forms, and quadratic spaces: Vaz and da
+    Rocha \cite[Chap.~1]{vazIntroductionCliffordAlgebras2016}.
+\end{itemize}
+
+\printbibliography
+
+\end{document}
