@@ -13,7 +13,7 @@
 \captionsetup[table]{position=top,skip=6pt}
 
 \usepackage[backend=biber,style=numeric-comp,sorting=none]{biblatex}
-\addbibresource{./schedule.bib}
+\addbibresource{../../bibliography/clifford-seminar-group.bib}
 
 \usepackage[colorlinks=true]{hyperref}
 \usepackage{cleveref}
@@ -21,11 +21,11 @@
 \newcommand{\Cl}{\mathcal{C}\ell}
 \newcommand{\R}{\mathbb{R}}
 
-\title{\LARGE\bfseries Clifford Algebras and the Kepler Problem
-in Theoretical Physics\\[0.5em]
-\large Seminar Methodology, Schedule, and Foundational Syllabus}
+\title{\LARGE\bfseries Clifford Algebras in Theoretical Physics\\[0.5em]
+\large Seminar Methodology, Modular Syllabus, and Thematic Progression}
 \author{Clifford Seminar Group\\
-\small Universidad Distrital Francisco Jos{\'e} de Caldas}
+  \small Leader: Julian L. Avila-Martinez \\
+  \small Universidad Distrital Francisco Jos{\'e} de Caldas}
 \date{}
 
 \begin{document}
@@ -35,19 +35,27 @@ in Theoretical Physics\\[0.5em]
 \section{Overview}
 \label{sec:overview}
 
-This seminar investigates the Kepler problem across four physical domains
-unified under the invariant language of Clifford geometric algebras. The
-progression spans classical central force dynamics in $\Cl(3,0)$, spinor
-regularization, relativistic motion and gauge gravity in the spacetime algebra
-$\Cl(1,3)$, and the relativistic quantum field description of the hydrogen
-atom via the Dirac--Hestenes equation.
+This seminar investigates invariant geometric formulations of theoretical
+physics through Clifford algebras.
+The Kepler problem and the associated Coulomb potential serve as the central
+dynamical backbone and comparative benchmark across classical mechanics, spinor
+regularization, relativistic spacetime dynamics, and relativistic quantum
+mechanics.
+While this central force problem guides the thematic progression, the curriculum
+is designed to accommodate systematic deviations into adjacent physical and
+mathematical domains, including coordinate-free differential forms, monogenic
+analysis, gauge theories of gravitation, and geometric thermodynamics.
 
-The colloquium operates as a working research seminar. Participants engage as
-collaborating researchers responsible for analytical rigour, formal mathematical
-derivations, and critical evaluation of physical foundations. The program
-comprises 18 weekly sessions of 90 minutes. Weeks~1 through~3 establish the
-algebraic foundation, while Weeks~4 through~18 are conducted by senior--junior
-tandems.
+The colloquium operates as a collaborative working seminar focused on direct
+blackboard derivations and critical appraisal of physical foundations.
+The syllabus is structured into sequential modular topics.
+A given topic may span one or multiple 90-minute sessions depending on the
+analytical depth of the derivations and the scope of plenary debate.
+This modular design preserves structural continuity when topics expand or when
+tangential inquiries are pursued.
+
+Exposition duties are distributed across senior--junior tandems to foster
+rigorous peer mentorship.
 
 \section{Methodology}
 \label{sec:methodology}
@@ -55,47 +63,55 @@ tandems.
 \subsection{Working Roles}
 \label{subsec:roles}
 
-The seminar avoids passive lecture formats. Each session relies on four distinct
-responsibilities.
+The seminar must avoid passive lecture formats.
+Each session relies on four distinct responsibilities.
 
 \begin{description}
   \item[Referat (Lead Exposition)]
-  Delivered jointly by the assigned tandem. The presentation focuses on direct,
-  blackboard derivations of primary equations. Conceptual assumptions and
-  algebraic transitions take precedence over projected slides.
+  Delivered jointly by the assigned tandem.
+  The presentation focuses on direct, blackboard derivations of primary
+  equations.
+  Conceptual assumptions and algebraic transitions take precedence over
+  projected slides.
   \item[Korreferat (Respondent Critique)]
   An assigned participant presents a critical commentary immediately following
-  the Referat. The respondent examines implicit hypotheses, compares the results
-  with traditional coordinate or matrix formalisms, identifies potential
-  pathologies, and formulates targeted questions for discussion.
+  the Referat.
+  The respondent examines implicit hypotheses, compares the results with
+  traditional coordinate or matrix formalisms, identifies potential pathologies,
+  and formulates targeted questions for discussion.
   \item[Thesenpapier (Position Paper)]
   A concise memorandum circulated by the presenting tandem at least five days
-  prior to the session. It contains formal definitions, key algebraic identity
-  statements, and explicit theses concerning physical interpretation.
+  prior to the session.
+  It contains formal definitions, key algebraic identity statements, and
+  explicit theses concerning physical interpretation.
   Participants study this document in advance.
   \item[Sitzungsprotokoll (Session Record)]
   A rotating participant documents the derivation steps, the resolution of
-  theoretical debates, and open problems. The finalized protocol is archived in
-  the shared repository within seven days following the session.
+  theoretical debates, and open problems.
+  The finalized protocol is archived in the shared repository within seven days
+  following the session.
 \end{description}
 
 \subsection{Tandem Collaboration}
 \label{subsec:tandems}
 
-Weeks~4 through~18 pair an advanced participant (senior) with an earlier-stage
-student (junior). The senior ensures mathematical coherence and contextualizes
-advanced algebraic techniques. The junior works directly through the derivation
-machinery, receiving structured guidance in multilinear structures and
-relativistic dynamics. Responsibilities for blackboard presentation are shared
-equally between both speakers.
+Beginning with Topic~2, sessions pair an advanced participant (senior) with an
+earlier-stage student (junior).
+The senior ensures mathematical coherence and contextualizes advanced algebraic
+techniques.
+The junior works directly through the derivation machinery, receiving structured
+guidance in multilinear structures and relativistic dynamics.
+Responsibilities for blackboard presentation are shared equally between both
+speakers.
 
 \subsection{Session Structure}
 \label{subsec:structure}
 
-Preparatory meetings with the seminar director occur two weeks and five days
-prior to each session. Every attendee must submit at least one written question
-on the Thesenpapier 24 hours before meeting. The 90-minute session adheres to the
-schedule in \cref{tab:session_structure}.
+Preparatory meetings with the seminar leader occur two weeks and five days prior
+to each session.
+Every attendee must submit at least one written question on the Thesenpapier 24
+hours before meeting.
+The 90-minute session adheres to the allocation in \cref{tab:session_structure}.
 
 \begin{table}[ht]
 \centering
@@ -107,8 +123,8 @@ Phase & Duration & Content & Responsible \\
 \midrule
 I   & 40 min & Live blackboard derivation (Referat) & Presenting tandem \\
 II  & 10 min & Critical response and opening theses (Korreferat) & Respondent \\
-III & 35 min & Plenary debate, boundary cases, interpretation & All participants \\
-IV  & 5 min  & Synthesis of open questions and preview & Director \\
+III & 35 min & Plenary debate and interpretation & All participants \\
+IV  & 5 min  & Synthesis of open questions and preview & Seminar leader \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -116,35 +132,41 @@ IV  & 5 min  & Synthesis of open questions and preview & Director \\
 \section{Schedule and Syllabus}
 \label{sec:schedule}
 
-Primary reference works are designated as follows: \textbf{VR} indicates Vaz
-and da Rocha, \emph{An Introduction to Clifford Algebras and Spinors}
-\cite{vazIntroductionCliffordAlgebras2016}; \textbf{DL} indicates Doran and
+Primary reference works are designated by short abbreviations.
+VR indicates Vaz and da Rocha, \emph{An Introduction to Clifford Algebras and
+Spinors} \cite{vazIntroductionCliffordAlgebras2016}; DL indicates Doran and
 Lasenby, \emph{Geometric Algebra for Physicists}
-\cite{doranGeometricAlgebraPhysicists2013}; \textbf{HS} indicates Hestenes and
-Sobczyk, \emph{Clifford Algebra to Geometric Calculus}
+\cite{doranGeometricAlgebraPhysicists2013}; HS indicates Hestenes and Sobczyk,
+\emph{Clifford Algebra to Geometric Calculus}
 \cite{hestenesCliffordAlgebraGeometric1984}.
-Specific chapters and research papers are cited directly in \cref{tab:syllabus}.
+Specific chapters and foundational literature are cited directly in
+\cref{tab:syllabus}.
 
 \renewcommand{\arraystretch}{1.28}
 \begin{longtable}{%
-  >{\raggedright\arraybackslash}p{0.6cm}%
-  >{\raggedright\arraybackslash}p{3.6cm}%
-  >{\raggedright\arraybackslash}p{6.4cm}%
+  >{\raggedright\arraybackslash}p{0.8cm}%
+  >{\raggedright\arraybackslash}p{3.5cm}%
+  >{\raggedright\arraybackslash}p{6.3cm}%
   >{\raggedright\arraybackslash}p{4.4cm}%
 }
-\caption{Complete 18-week seminar schedule and syllabus.}
+\caption{Modular seminar syllabus and thematic sequence.}
 \label{tab:syllabus}\\
 \toprule
-Wk & Topic & Mathematical and Physical Content & Literature \\
+Topic & Subject & Mathematical and Physical Content & Literature \\
 \midrule
 \endhead
 
-\multicolumn{4}{@{}l}{\textit{Part A: Foundations and Geometric Analysis}}\\
+\multicolumn{4}{@{}l}{%
+  \textit{Part A: Foundations and Geometric Analysis}%
+}\\
 1 & Dual spaces, multilinear forms, and quadratic spaces
   & Dual linear space $V^*$, dual pairing $\langle\cdot,\cdot\rangle$, tensor
     algebra $T(V)$, symmetric bilinear forms, quadratic forms $q(v)$,
     polarization, non-degeneracy, and signature $(p,q)$ over $\R$.
-  & \\[3pt]
+  & VR \cite[Chap.~1]{vazIntroductionCliffordAlgebras2016};
+    Axler \cite[Chaps.~1--2]{axlerLinearAlgebraDone2015};
+    Fraleigh \cite[Chaps.~1.1--1.2, 7.33]{fraleighFirstCourseAbstract2021}.
+  \\[3pt]
 2 & Universal Clifford construction and involutions
   & Ideal $\mathcal{I}_q=\langle v\otimes v-q(v)1\rangle$, quotient algebra
     $\Cl(V,q)$, universal property, $\mathbb{Z}_2$-grading, grade involution
@@ -165,61 +187,68 @@ Wk & Topic & Mathematical and Physical Content & Literature \\
   & \\
 \midrule
 
-\multicolumn{4}{@{}l}{\textit{Part B: Classical Kepler Dynamics in $\Cl(3,0)$}}\\
-5 & Central forces and orbital angular momentum (Tandem 1)
+\multicolumn{4}{@{}l}{%
+  \textit{Part B: Classical Kepler Dynamics in $\Cl(3,0)$}%
+}\\
+5 & Central forces and orbital angular momentum
   & Equation of motion $\dot{p}=-(k/r^3)r$, orbital angular momentum bivector
     $L=r\wedge p$, conservation proof $\dot{L}=0$, planar confinement
     $r\wedge L=0$, coordinate-free duality via volume pseudoscalar $I_3$.
   & \\[3pt]
-6 & Laplace--Runge--Lenz vector and conics (Tandem 2)
+6 & Laplace--Runge--Lenz vector and conics
   & Multivector construction $A=\frac{1}{mk}pL-\hat{r}$, algebraic proof of
     $\dot{A}=0$ without coordinate frames, orbit derivation via scalar
     contraction $r\cdot A$, and invariant classification of conics.
   & \\
 \midrule
 
-\multicolumn{4}{@{}l}{\textit{Part C: Regularization, Harmonic Analysis, and Hidden Symmetries}}\\
-7 & Kustaanheimo--Stiefel transformation (Tandem 3)
+\multicolumn{4}{@{}l}{%
+  \textit{Part C: Regularization, Harmonic Analysis, and Hidden Symmetries}%
+}\\
+7 & Kustaanheimo--Stiefel transformation
   & Regularization of collision singularities at $r\to 0$, spinor mapping
     $x=u\sigma_3\tilde{u}$ with $u\in\Cl^+(3,0)\cong\mathbb{H}$, Sundman time
     rescaling $dt=r\,ds$, and $U(1)$ gauge freedom.
   & \\[3pt]
-8 & Four-dimensional oscillator and $\mathrm{SO}(4)$ (Tandem 4)
+8 & Four-dimensional oscillator and $\mathrm{SO}(4)$
   & Linearization to $u''+\frac{|E|}{2}u=0$, four-dimensional isotropic harmonic
     oscillator, realization of $\mathfrak{so}(4)\cong\mathfrak{su}(2)\oplus
     \mathfrak{su}(2)$ dynamical symmetry via $L$ and $A$, bound-state
     degeneracy.
   & \\[3pt]
-9 & Clifford--Fourier analysis and Fock projection (Tandem 5)
+9 & Clifford--Fourier analysis and Fock projection
   & Clifford--Fourier transform with pseudoscalar kernel $e^{-I_3 k\cdot x}$,
     multivector uncertainty relations, Fock stereographic projection of the
     Coulomb problem onto $S^3$, and bound states as spherical monogenics.
   & \\
 \midrule
 
-\multicolumn{4}{@{}l}{\textit{Part D: Relativistic Dynamics in Spacetime Algebra $\Cl(1,3)$}}\\
-10 & Spacetime algebra and observer split (Tandem 6)
+\multicolumn{4}{@{}l}{%
+  \textit{Part D: Relativistic Dynamics in Spacetime Algebra $\Cl(1,3)$}%
+}\\
+10 & Spacetime algebra and observer split
   & Dirac generators $\{\gamma_\mu\}$, signature $(+,-,-,-)$, observer split
     via $\gamma_0$, relative spatial bivectors $\sigma_k=\gamma_k\gamma_0$,
     proper Lorentz rotors in $\mathrm{Spin}^+(1,3)$, rotor kinematics
     $\dot{R}=\frac{1}{2}\Omega R$, Thomas precession.
   & \\[3pt]
-11 & Relativistic electrodynamics and Lorentz force (Tandem 7)
+11 & Relativistic electrodynamics and Lorentz force
   & Spacetime vector derivative $\nabla=\gamma^\mu\partial_\mu$, Faraday
     bivector $F=E+I_4B$, Maxwell system $\nabla F=J$, relativistic equation of
     motion $\dot{p}=eF\cdot u$, proper-time rotor integration.
   & \\[3pt]
-12 & Relativistic central forces and perihelion advance (Tandem 8)
+12 & Relativistic central forces and perihelion advance
   & Relativistic central potentials, breakdown of LRL vector conservation,
     energy-dependent dynamical corrections, and calculation of
     special-relativistic perihelion advance.
   & \\[3pt]
-13 & Gauge Theory Gravity and planetary orbits (Tandem 9)
-  & Position gauge field $\bar{h}(a)$ and rotation gauge field $\bar{\Omega}(a)$
-    on Minkowski background, spherically symmetric solutions, geodesic rotor
-    trajectories, and general-relativistic orbital precession.
+13 & Gauge Theory Gravity and planetary orbits
+  & Position gauge field $\bar{h}(a)$ and rotation gauge field
+    $\bar{\Omega}(a)$ on Minkowski background, spherically symmetric
+    solutions, geodesic rotor trajectories, and general-relativistic orbital
+    precession.
   & \\[3pt]
-14 & Geometric thermodynamics in spacetime algebra (Tandem 10)
+14 & Geometric thermodynamics in spacetime algebra
   & Conserved particle flux $N=nu$, stress-energy operator $T(a)$, entropy
     current $S=su$, invariant thermal 1-vector $\beta=u/(k_{\mathrm{B}}T)$,
     Killing equilibrium $\nabla\wedge\beta=0$, and Tolman--Ehrenfest thermal
@@ -227,27 +256,29 @@ Wk & Topic & Mathematical and Physical Content & Literature \\
   & \\
 \midrule
 
-\multicolumn{4}{@{}l}{\textit{Part E: Quantum Kepler Problem and Dirac--Hestenes Theory}}\\
-15 & Real Pauli algebra and spatial spin (Tandem 11)
+\multicolumn{4}{@{}l}{%
+  \textit{Part E: Quantum Kepler Problem and Dirac--Hestenes Theory}%
+}\\
+15 & Real Pauli algebra and spatial spin
   & Spatial algebra $\Cl(3,0)$ without matrix representations, unit spatial
     vectors as spin observables, Pauli multivector wave equation, spin-orbit
     coupling from the geometric product.
   & \\[3pt]
-16 & Dirac--Hestenes field equation (Tandem 12)
+16 & Dirac--Hestenes field equation
   & Spacetime algebra representation of the Dirac equation, even multivector
     field $\Psi\in\Cl^+(1,3)$, spin plane $\gamma_2\gamma_1$, polar form
     $\Psi=\rho^{1/2}e^{I_4\beta/2}R$, probability current
     $J=\Psi\gamma_0\tilde{\Psi}$, spin bivector $S=\frac{1}{2}\hbar\Psi\gamma_3
     \tilde{\Psi}$.
   & \\[3pt]
-17 & Exact solution of the relativistic hydrogen atom (Tandem 13)
+17 & Exact solution of the relativistic hydrogen atom
   & Separation of variables in spherical coordinates within $\Cl^+(1,3)$, rotor
     spherical harmonics, radial differential equations in the even sub-algebra,
     derivation of the Sommerfeld--Dirac energy spectrum.
   & \\[3pt]
-18 & Fine structure, Darwin term, and zitterbewegung (Tandem 14)
-  & Non-relativistic expansion of the Dirac--Hestenes equation, geometric origin
-    of the Darwin correction, rotor phase dynamics, lightlike field
+18 & Fine structure, Darwin term, and zitterbewegung
+  & Non-relativistic expansion of the Dirac--Hestenes equation, geometric
+    origin of the Darwin correction, rotor phase dynamics, lightlike field
     circulation, field-theoretic interpretation of zitterbewegung.
   & \\
 \bottomrule
@@ -256,31 +287,37 @@ Wk & Topic & Mathematical and Physical Content & Literature \\
 \section{Tandem Assignments}
 \label{sec:tandems_table}
 
-The assignments for the tandem-led sessions are presented in \cref{tab:tandems}.
+The assignments for lead expositions, junior collaborators, and designated
+respondents are compiled in \cref{tab:tandems}.
 
 \begin{table}[ht]
 \centering
-\caption{Register of tandem assignments and respondents for Weeks~5 through~18.}
+\caption{Register of seminar leaders, tandems, and respondents across topics.}
 \label{tab:tandems}
 \renewcommand{\arraystretch}{1.15}
-\begin{tabular}{@{}cp{4.8cm}p{3.2cm}p{3.2cm}p{2.6cm}@{}}
+\begin{tabular}{@{}cp{4.6cm}p{3.3cm}p{3.3cm}p{2.6cm}@{}}
 \toprule
-Wk & Topic & Senior & Junior & Respondent \\
+Topic & Subject & Senior / Lead & Junior & Respondent \\
 \midrule
-5  & Central forces and bivectors       & & & \\[2pt]
-6  & LRL vector and conics              & & & \\[2pt]
-7  & KS transformation                  & & & \\[2pt]
+1  & Dual spaces and quadratic forms   & J.~L. Avila-Martinez & --- & \\[2pt]
+2  & Universal Clifford construction  & J.~L. Avila-Martinez &
+     C.~Martinez & \\[2pt]
+3  & Multivector structures and Spin  & & & \\[2pt]
+4  & Clifford analysis and monogenics & & & \\[2pt]
+5  & Central forces and bivectors     & & & \\[2pt]
+6  & LRL vector and conics            & & & \\[2pt]
+7  & KS transformation                & & & \\[2pt]
 8  & 4D oscillator and $\mathrm{SO}(4)$ & & & \\[2pt]
 9  & Clifford--Fourier and Fock projection & & & \\[2pt]
-10 & Spacetime algebra                  & & & \\[2pt]
-11 & Electrodynamics in STA             & & & \\[2pt]
-12 & Relativistic central forces        & & & \\[2pt]
-13 & Gauge Theory Gravity               & & & \\[2pt]
-14 & Geometric thermodynamics           & & & \\[2pt]
-15 & Pauli algebra and spin             & & & \\[2pt]
-16 & Dirac--Hestenes equation           & & & \\[2pt]
-17 & Relativistic hydrogen              & & & \\[2pt]
-18 & Fine structure and zitterbewegung  & & & \\
+10 & Spacetime algebra                & & & \\[2pt]
+11 & Electrodynamics in STA           & & & \\[2pt]
+12 & Relativistic central forces      & & & \\[2pt]
+13 & Gauge Theory Gravity             & & & \\[2pt]
+14 & Geometric thermodynamics         & & & \\[2pt]
+15 & Pauli algebra and spin           & & & \\[2pt]
+16 & Dirac--Hestenes equation         & & & \\[2pt]
+17 & Relativistic hydrogen            & & & \\[2pt]
+18 & Fine structure and zitterbewegung & & & \\
 \bottomrule
 \end{tabular}
 \end{table}
