@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.jpg" alt="Clifford Seminar Group Logo" width="220" />
+</p>
+
 # Clifford Seminar Group
 
 This repository serves as the central working directory for the Clifford Seminar Group, an academic initiative founded at the Universidad Distrital Francisco José de Caldas. 
