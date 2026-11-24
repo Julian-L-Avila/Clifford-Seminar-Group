@@ -4,7 +4,9 @@
 
 # Clifford Seminar Group
 
-This repository serves as the central working directory for the Clifford Seminar Group, an academic initiative founded at the Universidad Distrital Francisco José de Caldas. 
+This repository serves as the central working directory for the Clifford Seminar Group, an academic initiative founded at the Universidad Distrital Francisco José de Caldas.
+
+**Seminar Webpage:** [https://julian-l-avila.github.io/Clifford-Seminar-Group/](https://julian-l-avila.github.io/Clifford-Seminar-Group/) (automatically deployed via GitHub Actions).
 
 The workspace coordinates joint resources, seminar administration, and research documentation across the following areas:
 

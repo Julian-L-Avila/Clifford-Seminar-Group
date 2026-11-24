@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clifford Seminar Group | Clifford Algebras in Theoretical Physics · UDFJC</title>
+  <meta name="description" content="Official academic webpage of the Clifford Seminar Group at Universidad Distrital Francisco José de Caldas — working colloquium on Clifford algebras in theoretical physics, position papers (Thesenpapiere), session records (Sitzungsprotokolle), modular syllabus, LaTeX templates, and bibliography." />
+  <meta name="author" content="Clifford Seminar Group — Julian L. Avila-Martinez" />
+  <meta name="keywords" content="Clifford Seminar Group, Clifford Algebras, Geometric Algebra, Spacetime Algebra, Cl(1,3), Cl(3,0), Spin Groups, Theoretical Physics, Mathematical Physics, Kepler Problem, Laplace-Runge-Lenz, Kustaanheimo-Stiefel, Dirac-Hestenes Equation, Thesenpapier, Sitzungsprotokoll, LaTeX Templates, Universidad Distrital Francisco José de Caldas, Julian L. Avila-Martinez, Bogotá" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="theme-color" content="#7D1128" />
+  <link rel="canonical" href="https://julian-l-avila.github.io/Clifford-Seminar-Group/" />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
+
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Clifford Seminar Group" />
+  <meta property="og:title" content="Clifford Seminar Group | Clifford Algebras in Theoretical Physics" />
+  <meta property="og:description" content="Working research seminar at Universidad Distrital Francisco José de Caldas investigating invariant geometric formulations of theoretical physics through Clifford algebras. Browse Thesenpapiere, Sitzungsprotokolle, syllabus, LaTeX templates, and bibliography." />
+  <meta property="og:url" content="https://julian-l-avila.github.io/Clifford-Seminar-Group/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="es_CO" />
+  <meta property="og:image" content="https://julian-l-avila.github.io/Clifford-Seminar-Group/assets/img/og-card.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Clifford Seminar Group — Clifford Algebras in Theoretical Physics at Universidad Distrital Francisco José de Caldas" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Clifford Seminar Group | Clifford Algebras in Theoretical Physics" />
+  <meta name="twitter:description" content="Position papers (Thesenpapiere), session records (Sitzungsprotokolle), modular syllabus, LaTeX monograph templates, and shared bibliography — UDFJC." />
+  <meta name="twitter:image" content="https://julian-l-avila.github.io/Clifford-Seminar-Group/assets/img/og-card.png" />
+  <meta name="twitter:image:alt" content="Clifford Seminar Group — Clifford Algebras in Theoretical Physics" />
+
+  <!-- Structured Data (JSON-LD for Search Engines & Academic Indexing) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://julian-l-avila.github.io/Clifford-Seminar-Group/#website",
+        "url": "https://julian-l-avila.github.io/Clifford-Seminar-Group/",
+        "name": "Clifford Seminar Group — Clifford Algebras in Theoretical Physics",
+        "description": "Working seminar on coordinate-free formulations of theoretical physics via Clifford algebras at Universidad Distrital Francisco José de Caldas.",
+        "inLanguage": ["en", "es"],
+        "publisher": {
+          "@id": "https://julian-l-avila.github.io/Clifford-Seminar-Group/#organization"
+        }
+      },
+      {
+        "@type": "ResearchOrganization",
+        "@id": "https://julian-l-avila.github.io/Clifford-Seminar-Group/#organization",
+        "name": "Clifford Seminar Group",
+        "url": "https://julian-l-avila.github.io/Clifford-Seminar-Group/",
+        "logo": "https://julian-l-avila.github.io/Clifford-Seminar-Group/assets/logo.jpg",
+        "description": "Academic working seminar investigating invariant geometric formulations of theoretical physics through real Clifford algebras, Spin groups, classical and quantum Kepler dynamics, and spacetime algebra.",
+        "founder": {
+          "@id": "https://julian-l-avila.github.io/JulianLAvila/#person"
+        },
+        "parentOrganization": {
+          "@type": "CollegeOrUniversity",
+          "name": "Universidad Distrital Francisco José de Caldas",
+          "url": "https://www.udistrital.edu.co/"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bogotá D.C.",
+          "addressCountry": "CO"
+        },
+        "sameAs": [
+          "https://github.com/Julian-L-Avila/Clifford-Seminar-Group"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://julian-l-avila.github.io/JulianLAvila/#person",
+        "name": "Julian L. Avila-Martinez",
+        "alternateName": "Julián L. Ávila-Martínez",
+        "url": "https://julian-l-avila.github.io/JulianLAvila/",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "Universidad Distrital Francisco José de Caldas"
+        },
+        "sameAs": [
+          "https://orcid.org/0009-0002-8630-1922",
+          "https://github.com/Julian-L-Avila"
+        ]
+      },
+      {
+        "@type": "Course",
+        "@id": "https://julian-l-avila.github.io/Clifford-Seminar-Group/#syllabus",
+        "name": "Clifford Algebras in Theoretical Physics",
+        "description": "Modular working seminar covering dual and quadratic spaces, universal Clifford algebras, bivector Lie algebras, Spin groups, monogenic analysis, classical Kepler dynamics, Kustaanheimo-Stiefel regularization, spacetime algebra Cl(1,3), Gauge Theory Gravity, and the Dirac-Hestenes equation.",
+        "provider": {
+          "@id": "https://julian-l-avila.github.io/Clifford-Seminar-Group/#organization"
+        },
+        "inLanguage": ["en", "es"],
+        "isAccessibleForFree": true,
+        "hasCourseInstance": {
+          "@type": "CourseInstance",
+          "name": "Term 2026-2",
+          "courseMode": ["onsite", "online"],
+          "instructor": {
+            "@id": "https://julian-l-avila.github.io/JulianLAvila/#person"
+          }
+        }
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://julian-l-avila.github.io/Clifford-Seminar-Group/#collection",
+        "url": "https://julian-l-avila.github.io/Clifford-Seminar-Group/",
+        "name": "Clifford Seminar Group Materials Archive",
+        "isPartOf": {
+          "@id": "https://julian-l-avila.github.io/Clifford-Seminar-Group/#website"
+        },
+        "hasPart": [
+          {
+            "@type": "DigitalDocument",
+            "name": "Modular Seminar Syllabus and Methodology (2026-2)",
+            "encodingFormat": "application/pdf",
+            "url": "https://julian-l-avila.github.io/Clifford-Seminar-Group/schedule/2026-2/schedule.pdf"
+          },
+          {
+            "@type": "DigitalDocument",
+            "name": "Work Plan: Linear Spaces, Symmetries, and Clifford Algebras in Theoretical Physics",
+            "encodingFormat": "application/pdf",
+            "url": "https://julian-l-avila.github.io/Clifford-Seminar-Group/schedule/2026-2/work-plan.pdf"
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "name": "Session 01 Thesenpapier: Dual Spaces, Multilinear Forms, and Quadratic Spaces",
+            "author": { "@id": "https://julian-l-avila.github.io/JulianLAvila/#person" },
+            "encodingFormat": "application/pdf",
+            "url": "https://julian-l-avila.github.io/Clifford-Seminar-Group/tex/thesenpapier/session01-dual-spaces/session01-thesenpapier.pdf"
+          },
+          {
+            "@type": "DigitalDocument",
+            "name": "Session 01 Sitzungsprotokoll (2026-11-04): Dual Space and Bidual",
+            "datePublished": "2026-11-04",
+            "encodingFormat": "application/pdf",
+            "url": "https://julian-l-avila.github.io/Clifford-Seminar-Group/tex/sitzungsprotokoll/session01-dual-spaces/session01-sitzungsprotokoll-2026-11-04.pdf"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- MathJax 3 with Shared clifford-seminar.sty Macros -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        macros: {
+          Cl: '\\mathcal{C}\\ell',
+          R: '\\mathbb{R}',
+          C: '\\mathbb{C}',
+          Q: '\\mathbb{Q}',
+          Z: '\\mathbb{Z}',
+          N: '\\mathbb{N}',
+          Spin: '\\mathrm{Spin}',
+          Pin: '\\mathrm{Pin}',
+          SO: '\\mathrm{SO}',
+          SU: '\\mathrm{SU}',
+          ev: '\\operatorname{ev}',
+          rad: '\\operatorname{rad}',
+          Hom: '\\operatorname{Hom}',
+          dd: '\\mathrm{d}',
+          pair: ['\\langle #1, #2 \\rangle', 2]
+        }
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">
+    <span class="lang-en">Skip to main content</span>
+    <span class="lang-es">Ir al contenido principal</span>
+  </a>
+
+  <!-- Top Navigation -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <img src="assets/logo.jpg" alt="Clifford Seminar Group Logo" class="brand-logo" width="34" height="34" />
+        <div>
+          <span>Clifford Seminar Group</span>
+          <span class="brand-sub">UDFJC · Bogotá D.C.</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#materials">
+          <span class="lang-en">Materials</span>
+          <span class="lang-es">Materiales</span>
+        </a>
+        <a href="#syllabus">
+          <span class="lang-en">Syllabus</span>
+          <span class="lang-es">Programa</span>
+        </a>
+        <a href="#methodology">
+          <span class="lang-en">Methodology</span>
+          <span class="lang-es">Metodología</span>
+        </a>
+        <a href="#templates">
+          <span class="lang-en">LaTeX Kit</span>
+          <span class="lang-es">Plantillas LaTeX</span>
+        </a>
+        <a href="#bibliography">
+          <span class="lang-en">Bibliography</span>
+          <span class="lang-es">Bibliografía</span>
+        </a>
+        <a href="https://github.com/Julian-L-Avila/Clifford-Seminar-Group" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+
+      <div class="nav-controls">
+        <button id="lang-toggle" class="ctrl-btn" type="button" title="Switch English / Español" aria-label="Toggle language">
+          <span aria-hidden="true">EN/ES</span> · <strong id="lang-label">ES</strong>
+        </button>
+        <button id="theme-toggle" class="ctrl-btn" type="button" title="Switch Light / Dark Theme" aria-label="Toggle color theme">
+          <span id="theme-icon" aria-hidden="true">☾</span>
+        </button>
+        <button id="menu-toggle" class="ctrl-btn menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open navigation menu">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-drawer" class="mobile-drawer" aria-label="Mobile Navigation">
+      <a href="#materials"><span class="lang-en">Materials &amp; Sessions</span><span class="lang-es">Materiales y Sesiones</span></a>
+      <a href="#syllabus"><span class="lang-en">Syllabus &amp; Work Plan</span><span class="lang-es">Programa y Plan de Trabajo</span></a>
+      <a href="#methodology"><span class="lang-en">Methodology</span><span class="lang-es">Metodología</span></a>
+      <a href="#templates"><span class="lang-en">LaTeX Templates</span><span class="lang-es">Plantillas LaTeX</span></a>
+      <a href="#bibliography"><span class="lang-en">Bibliography</span><span class="lang-es">Bibliografía</span></a>
+      <a href="https://github.com/Julian-L-Avila/Clifford-Seminar-Group" target="_blank" rel="noopener">GitHub Repository</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero Masthead (Springer Academic Monograph Style) -->
+    <section class="hero">
+      <div class="container">
+        <div class="masthead-strip">
+          <div>
+            <div class="series-kicker">
+              <strong>Clifford Seminar Group</strong> ·
+              <span class="lang-en">Working Colloquium</span>
+              <span class="lang-es">Seminario de Investigación</span> ·
+              <span class="lang-en">Term 2026–2</span>
+              <span class="lang-es">Periodo 2026–2</span>
+            </div>
+            <div class="series-meta">
+              Universidad Distrital Francisco José de Caldas — Bogotá D.C., Colombia
+            </div>
+          </div>
+          <div class="series-meta" style="font-family: var(--font-mono); font-size: 0.78rem;">
+            \(\Cl(V,q) = T(V)/\mathcal{I}_q\)
+          </div>
+        </div>
+
+        <div class="editorial-rule" aria-hidden="true"></div>
+
+        <div class="hero-grid">
+          <div>
+            <h1 class="hero-title">
+              <span class="lang-en">Clifford Algebras in <span class="title-accent">Theoretical Physics</span></span>
+              <span class="lang-es">Álgebras de Clifford en la <span class="title-accent">Física Teórica</span></span>
+            </h1>
+
+            <p class="hero-subtitle-line lang-en">
+              Coordinate-free linear spaces, Lie &amp; Spin symmetries, Kepler dynamics, and relativistic spacetime algebra
+            </p>
+            <p class="hero-subtitle-line lang-es">
+              Espacios lineales libres de coordenadas, simetrías de Lie y Spin, dinámica de Kepler y álgebra del espaciotiempo
+            </p>
+
+            <div class="seminar-abstract">
+              <p class="lang-en">
+                <span class="abstract-label">Abstract.</span>
+                This working seminar investigates invariant geometric formulations of theoretical physics through real Clifford algebras \(\Cl(V,q)\). Anchored by the Kepler–Coulomb problem as a comparative dynamical backbone, our progression moves from coordinate-free dual and quadratic spaces, coupled oscillators, and bivector Lie algebras \(\Cl^2(V,q) \cong \mathfrak{so}(p,q)\) to \(\Spin(p,q)\) rotors, Kustaanheimo–Stiefel regularization, spacetime algebra \(\Cl(1,3)\), Gauge Theory Gravity, and the Dirac–Hestenes equation. Sessions emphasize live blackboard derivations, critical peer commentary, and archival research documentation.
+              </p>
+              <p class="lang-es">
+                <span class="abstract-label">Resumen.</span>
+                Este seminario de trabajo investiga formulaciones geométricas invariantes de la física teórica mediante álgebras de Clifford reales \(\Cl(V,q)\). Articulado en torno al problema de Kepler–Coulomb como eje dinámico comparativo, el recorrido abarca desde espacios duales y cuadráticos libres de coordenadas, osciladores acoplados y álgebras de Lie de bivectores \(\Cl^2(V,q) \cong \mathfrak{so}(p,q)\), hasta rotores de \(\Spin(p,q)\), regularización de Kustaanheimo–Stiefel, álgebra del espaciotiempo \(\Cl(1,3)\), gravedad como teoría gauge y la ecuación de Dirac–Hestenes.
+              </p>
+            </div>
+
+            <div class="hero-cta">
+              <a href="#materials" class="btn btn-primary">
+                <span class="lang-en">Browse Seminar Materials</span>
+                <span class="lang-es">Explorar Materiales</span>
+              </a>
+              <a href="schedule/2026-2/schedule.pdf" class="btn btn-outline-oxblood" target="_blank" rel="noopener">
+                <span class="lang-en">Syllabus PDF (18 Topics)</span>
+                <span class="lang-es">Programa PDF (18 Temas)</span>
+              </a>
+              <a href="schedule/2026-2/work-plan.pdf" class="btn btn-secondary" target="_blank" rel="noopener">
+                <span class="lang-en">Work Plan PDF (12 Topics)</span>
+                <span class="lang-es">Plan de Trabajo PDF</span>
+              </a>
+              <a href="https://github.com/Julian-L-Avila/Clifford-Seminar-Group" class="btn btn-secondary" target="_blank" rel="noopener">
+                GitHub Repo ↗
+              </a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <strong>18</strong>
+                <span class="lang-en">Modular Topics (Parts A–E)</span>
+                <span class="lang-es">Temas Modulares (Partes A–E)</span>
+              </div>
+              <div class="hero-stat">
+                <strong>90 min</strong>
+                <span class="lang-en">Blackboard Colloquium</span>
+                <span class="lang-es">Coloquio en Tablero</span>
+              </div>
+              <div class="hero-stat">
+                <strong>9</strong>
+                <span class="lang-en">Core Zotero References</span>
+                <span class="lang-es">Referencias Base (Zotero)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Colophon Card with Square Publisher Logo Emblem -->
+          <aside class="colophon-card" aria-label="Seminar Colophon">
+            <div class="colophon-head">
+              <div class="logo-emblem-frame">
+                <img src="assets/logo.jpg" alt="Clifford Seminar Group Origami Dog Emblem with Cl(R) collar" width="76" height="76" />
+              </div>
+              <div>
+                <div class="colophon-title">Clifford Seminar Group</div>
+                <div class="colophon-inst">Universidad Distrital Francisco José de Caldas</div>
+              </div>
+            </div>
+
+            <dl class="colophon-dl">
+              <dt><span class="lang-en">Leader</span><span class="lang-es">Guía</span></dt>
+              <dd>
+                <strong><a href="https://julian-l-avila.github.io/JulianLAvila/" target="_blank" rel="noopener">Julian L. Avila-Martinez</a></strong>
+              </dd>
+
+              <dt><span class="lang-en">Format</span><span class="lang-es">Formato</span></dt>
+              <dd>
+                <span class="lang-en">Hybrid (In-person &amp; Online) · Blackboard derivations in Senior–Junior tandems</span>
+                <span class="lang-es">Híbrido (Presencial y Virtual) · Derivaciones en tablero en tándems Senior–Junior</span>
+              </dd>
+
+              <dt><span class="lang-en">Documents</span><span class="lang-es">Documentos</span></dt>
+              <dd>
+                <em>Thesenpapiere</em> (<span class="lang-en">position papers</span><span class="lang-es">documentos de tesis</span>) &amp;
+                <em>Sitzungsprotokolle</em> (<span class="lang-en">session records</span><span class="lang-es">actas de sesión</span>)
+              </dd>
+
+              <dt><span class="lang-en">Latest</span><span class="lang-es">Reciente</span></dt>
+              <dd>
+                <a href="tex/sitzungsprotokoll/session01-dual-spaces/session01-sitzungsprotokoll-2026-11-04.pdf" target="_blank" rel="noopener">
+                  Session 01 Protocol (4 Nov 2026)
+                </a>
+              </dd>
+
+              <dt><span class="lang-en">Next Task</span><span class="lang-es">Próximo</span></dt>
+              <dd>
+                <span class="lang-en">Thesenpapier 01, Problem 4 (\(b^\flat\), \(b^\sharp\), and \(H = \frac{1}{2m}b^*(p,p)\))</span>
+                <span class="lang-es">Thesenpapier 01, Problema 4 (\(b^\flat\), \(b^\sharp\) y \(H = \frac{1}{2m}b^*(p,p)\))</span>
+              </dd>
+            </dl>
+
+            <div class="colophon-foot">
+              <span class="tag-chip accent">\(\Cl(3,0)\)</span>
+              <span class="tag-chip accent">\(\Cl(1,3)\)</span>
+              <span class="tag-chip">\(\Spin^+(1,3)\)</span>
+              <span class="tag-chip">\(\mathfrak{so}(4)\)</span>
+              <span class="tag-chip">LaTeX · BibTeX</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Materials Navigator & Session Archive -->
+    <section id="materials" class="content-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-number">Section 01</span>
+          <h2 class="section-title">
+            <span class="lang-en">Seminar Materials &amp; Sessions Archive</span>
+            <span class="lang-es">Archivo de Materiales y Sesiones</span>
+          </h2>
+          <p class="section-desc lang-en">
+            Direct access to every compiled PDF, LaTeX source (<code>.tex</code>), syllabus document, template, and reference file tracked in the seminar repository. Filter by document category or search by mathematical topic.
+          </p>
+          <p class="section-desc lang-es">
+            Acceso directo a cada PDF compilado, fuente LaTeX (<code>.tex</code>), documento del programa, plantilla y archivo bibliográfico del repositorio del seminario. Filtre por categoría o busque por tema.
+          </p>
+        </div>
+
+        <div class="toolbar" role="region" aria-label="Materials filter and search">
+          <button class="filter-btn active" data-filter="all" type="button">
+            <span class="lang-en">All (7)</span><span class="lang-es">Todos (7)</span>
+          </button>
+          <button class="filter-btn" data-filter="thesenpapier" type="button">
+            Thesenpapiere
+          </button>
+          <button class="filter-btn" data-filter="sitzungsprotokoll" type="button">
+            Sitzungsprotokolle
+          </button>
+          <button class="filter-btn" data-filter="planning" type="button">
+            <span class="lang-en">Schedule &amp; Work Plan</span><span class="lang-es">Programa y Plan</span>
+          </button>
+          <button class="filter-btn" data-filter="template" type="button">
+            <span class="lang-en">LaTeX Templates</span><span class="lang-es">Plantillas LaTeX</span>
+          </button>
+          <button class="filter-btn" data-filter="bibliography" type="button">
+            <span class="lang-en">Bibliography</span><span class="lang-es">Bibliografía</span>
+          </button>
+
+          <div class="search-wrap">
+            <label for="material-search" class="sr-only">Search seminar materials</label>
+            <input id="material-search" class="search-input" type="search" placeholder="Search sessions, papers, topics..." />
+          </div>
+        </div>
+
+        <div class="materials-grid" id="materials-grid">
+          <!-- Card 1: Session 01 Thesenpapier -->
+          <article class="material-card" data-kind="thesenpapier" data-keywords="session 01 dual spaces multilinear forms quadratic spaces polarization musical isomorphism tensor algebra minkowski">
+            <div class="card-meta-row">
+              <span class="kind-badge">Thesenpapier · Session 01</span>
+              <span class="card-date">Module I</span>
+            </div>
+            <h3>Dual Spaces, Multilinear Forms, and Quadratic Spaces</h3>
+            <p class="lang-en">
+              Foundational position paper motivating covectorial measurement on configuration manifolds, axiomatic linear spaces, canonical bidual \(\ev: V \to V^{**}\), free tensor algebra \(T(V)\), quadratic forms, polarization, musical isomorphisms \(b^\flat, b^\sharp\), four plenary theses, and five preparatory exercises.
+            </p>
+            <p class="lang-es">
+              Documento fundacional de tesis sobre medición covectorial, espacios lineales axiomáticos, bidual canónico \(\ev: V \to V^{**}\), álgebra tensorial libre \(T(V)\), formas cuadráticas, polarización, isomorfismos musicales \(b^\flat, b^\sharp\), cuatro tesis plenarias y cinco ejercicios preparatorios.
+            </p>
+            <div class="card-people">
+              <strong>Referat:</strong> Julian L. Avila-Martinez
+            </div>
+            <div class="card-actions">
+              <a class="doc-link pdf" href="tex/thesenpapier/session01-dual-spaces/session01-thesenpapier.pdf" target="_blank" rel="noopener">PDF</a>
+              <a class="doc-link tex" href="tex/thesenpapier/session01-dual-spaces/session01-thesenpapier.tex" target="_blank" rel="noopener">.tex</a>
+              <a class="doc-link" href="#session01-spotlight">
+                <span class="lang-en">Read Theses ↓</span><span class="lang-es">Ver Tesis ↓</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2: Session 01 Sitzungsprotokoll -->
+          <article class="material-card" data-kind="sitzungsprotokoll" data-keywords="session 01 sitzungsprotokoll protocol dual space bidual problem 3 sebastian rodriguez covariant contravariant isometry">
+            <div class="card-meta-row">
+              <span class="kind-badge protocol">Sitzungsprotokoll · Session 01</span>
+              <span class="card-date">2026-11-04</span>
+            </div>
+            <h3>Dual Space and Bidual (Thesenpapier 01, Problem 3)</h3>
+            <p class="lang-en">
+              Archival blackboard record proving dual basis transformation \(\tilde{\omega}^i = (T^{-1})^*\omega^i\), showing why no canonical isomorphism \(V \to V^*\) exists beyond isometries (with dilatation counterexample), proving naturality of \(\ev: V \to V^{**}\), and assigning Problem 4.
+            </p>
+            <p class="lang-es">
+              Acta de sesión que demuestra la transformación de la base dual \(\tilde{\omega}^i = (T^{-1})^*\omega^i\), la ausencia de isomorfismo canónico \(V \to V^*\) salvo isometrías, la naturalidad del bidual \(\ev: V \to V^{**}\) y el encargo del Problema 4.
+            </p>
+            <div class="card-people">
+              <strong>Referat:</strong> Julián · <strong>Scribe:</strong> Sebastián Rodríguez · 11 attendees
+            </div>
+            <div class="card-actions">
+              <a class="doc-link pdf" href="tex/sitzungsprotokoll/session01-dual-spaces/session01-sitzungsprotokoll-2026-11-04.pdf" target="_blank" rel="noopener">PDF</a>
+              <a class="doc-link tex" href="tex/sitzungsprotokoll/session01-dual-spaces/session01-sitzungsprotokoll-2026-11-04.tex" target="_blank" rel="noopener">.tex</a>
+              <a class="doc-link" href="#session01-spotlight">
+                <span class="lang-en">Key Takeaways ↓</span><span class="lang-es">Conclusiones ↓</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 3: Modular Syllabus -->
+          <article class="material-card" data-kind="planning" data-keywords="schedule syllabus 2026-2 methodology kepler kustaanheimo stiefel spacetime algebra dirac hestenes gauge theory gravity thermodynamics">
+            <div class="card-meta-row">
+              <span class="kind-badge">Schedule · Term 2026–2</span>
+              <span class="card-date">18 Topics</span>
+            </div>
+            <h3>Clifford Algebras in Theoretical Physics — Syllabus &amp; Methodology</h3>
+            <p class="lang-en">
+              Master seminar document detailing the four working roles, tandem collaboration model, 90-minute session allocation, the complete 18-topic modular syllabus (Parts A–E), and the register of tandem assignments.
+            </p>
+            <p class="lang-es">
+              Documento rector del seminario con los cuatro roles de trabajo, colaboración en tándems, estructura de 90 minutos, programa modular de 18 temas (Partes A–E) y registro de asignaciones.
+            </p>
+            <div class="card-people">
+              <strong>Path:</strong> <code>schedule/2026-2/schedule.pdf</code>
+            </div>
+            <div class="card-actions">
+              <a class="doc-link pdf" href="schedule/2026-2/schedule.pdf" target="_blank" rel="noopener">PDF</a>
+              <a class="doc-link tex" href="schedule/2026-2/schedule.tex" target="_blank" rel="noopener">.tex</a>
+              <a class="doc-link" href="#syllabus">
+                <span class="lang-en">Interactive Table ↓</span><span class="lang-es">Tabla Interactiva ↓</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 4: Problem-Driven Work Plan -->
+          <article class="material-card" data-kind="planning" data-keywords="work plan 2026-2 coupled harmonic oscillators spectral theorem wave equation lie algebras so(4) kepler maxwell dirac">
+            <div class="card-meta-row">
+              <span class="kind-badge">Work Plan · Term 2026–2</span>
+              <span class="card-date">12 Topics</span>
+            </div>
+            <h3>Work Plan: Linear Spaces, Symmetries, and Clifford Algebras</h3>
+            <p class="lang-en">
+              Problem-driven four-module roadmap pairing each algebraic structure with a concrete physical problem: coupled oscillators, the classical wave equation, rotational Lie algebras, \(\SO(4)\) Kepler symmetry, Maxwell's \(\nabla F = J\), and the Dirac field.
+            </p>
+            <p class="lang-es">
+              Hoja de ruta en cuatro módulos guiada por problemas físicos: osciladores acoplados, ecuación de onda, álgebras de Lie rotacionales, simetría \(\SO(4)\) de Kepler, electrodinámica \(\nabla F = J\) y campo de Dirac.
+            </p>
+            <div class="card-people">
+              <strong>Path:</strong> <code>schedule/2026-2/work-plan.pdf</code>
+            </div>
+            <div class="card-actions">
+              <a class="doc-link pdf" href="schedule/2026-2/work-plan.pdf" target="_blank" rel="noopener">PDF</a>
+              <a class="doc-link tex" href="schedule/2026-2/work-plan.tex" target="_blank" rel="noopener">.tex</a>
+              <a class="doc-link" href="#syllabus">
+                <span class="lang-en">View Modules ↓</span><span class="lang-es">Ver Módulos ↓</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 5: Thesenpapier Template -->
+          <article class="material-card" data-kind="template" data-keywords="template latex thesenpapier clifford-seminar.sty springer amsthm macros">
+            <div class="card-meta-row">
+              <span class="kind-badge neutral">LaTeX Template</span>
+              <span class="card-date">v2.0</span>
+            </div>
+            <h3>Thesenpapier Template &amp; Shared Style Package</h3>
+            <p class="lang-en">
+              Springer/Birkhäuser-inspired LaTeX position paper template powered by <code>clifford-seminar.sty</code>, with automatic logo embedding, theorem environments, numbered plenary theses, and shared Clifford macros.
+            </p>
+            <p class="lang-es">
+              Plantilla LaTeX de estilo Springer/Birkhäuser basada en <code>clifford-seminar.sty</code>, con inserción automática del emblema, entornos de teoremas, tesis numeradas y macros de álgebra de Clifford.
+            </p>
+            <div class="card-people">
+              <strong>Path:</strong> <code>tex/templates/thesenpapier/</code>
+            </div>
+            <div class="card-actions">
+              <a class="doc-link pdf" href="tex/templates/thesenpapier/thesenpapier-template.pdf" target="_blank" rel="noopener">Preview PDF</a>
+              <a class="doc-link tex" href="tex/templates/thesenpapier/thesenpapier-template.tex" target="_blank" rel="noopener">.tex</a>
+              <a class="doc-link tex" href="tex/templates/clifford-seminar.sty" target="_blank" rel="noopener">.sty</a>
+            </div>
+          </article>
+
+          <!-- Card 6: Sitzungsprotokoll Template -->
+          <article class="material-card" data-kind="template" data-keywords="template latex sitzungsprotokoll protocol scribe takeaways nextsession">
+            <div class="card-meta-row">
+              <span class="kind-badge neutral">LaTeX Template</span>
+              <span class="card-date">v2.0</span>
+            </div>
+            <h3>Sitzungsprotokoll Template (Session Record)</h3>
+            <p class="lang-en">
+              Archival protocol template featuring the attendance &amp; role metadata table, <code>discussionnote</code> scholia, <code>takeaways</code> conclusions, and <code>nextsession</code> open-question callouts. Supports <code>nobib</code> for rapid compilation.
+            </p>
+            <p class="lang-es">
+              Plantilla de acta de sesión con tabla de metadatos y asistencia, escolios <code>discussionnote</code>, conclusiones <code>takeaways</code> y recuadro <code>nextsession</code>. Soporta la opción <code>nobib</code>.
+            </p>
+            <div class="card-people">
+              <strong>Path:</strong> <code>tex/templates/sitzungsprotokoll/</code>
+            </div>
+            <div class="card-actions">
+              <a class="doc-link pdf" href="tex/templates/sitzungsprotokoll/sitzungsprotokoll-template.pdf" target="_blank" rel="noopener">Preview PDF</a>
+              <a class="doc-link tex" href="tex/templates/sitzungsprotokoll/sitzungsprotokoll-template.tex" target="_blank" rel="noopener">.tex</a>
+              <a class="doc-link" href="#templates">
+                <span class="lang-en">Quick Start ↓</span><span class="lang-es">Guía Rápida ↓</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 7: Shared Bibliography -->
+          <article class="material-card" data-kind="bibliography" data-keywords="bibliography bibtex zotero vaz rocha doran lasenby hestenes sobczyk girard axler fraleigh">
+            <div class="card-meta-row">
+              <span class="kind-badge neutral">BibTeX · Zotero</span>
+              <span class="card-date">9 Entries</span>
+            </div>
+            <h3>Shared Seminar Bibliography (<code>clifford-seminar-group.bib</code>)</h3>
+            <p class="lang-en">
+              Central Zotero-managed reference database automatically resolved by <code>clifford-seminar.sty</code> and <code>schedule.tex</code>, covering Vaz &amp; da Rocha, Doran &amp; Lasenby, Hestenes, Girard, Axler, and Fraleigh.
+            </p>
+            <p class="lang-es">
+              Base bibliográfica compartida gestionada con Zotero y resuelta automáticamente por <code>clifford-seminar.sty</code>: Vaz &amp; da Rocha, Doran &amp; Lasenby, Hestenes, Girard, Axler y Fraleigh.
+            </p>
+            <div class="card-people">
+              <strong>Path:</strong> <code>bibliography/clifford-seminar-group.bib</code>
+            </div>
+            <div class="card-actions">
+              <a class="doc-link tex" href="bibliography/clifford-seminar-group.bib" target="_blank" rel="noopener">Download .bib</a>
+              <a class="doc-link" href="#bibliography">
+                <span class="lang-en">Browse References ↓</span><span class="lang-es">Ver Referencias ↓</span>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <p id="materials-empty" class="empty-state">
+          <span class="lang-en">No seminar materials match your current filter or search query.</span>
+          <span class="lang-es">Ningún material del seminario coincide con el filtro o término de búsqueda.</span>
+        </p>
+
+        <!-- Session 01 Scholarly Spotlight -->
+        <div id="session01-spotlight" class="session-spotlight">
+          <div class="spotlight-header">
+            <div>
+              <span class="section-number" style="margin-bottom: 0.1rem;">Session 01 · Plenary Theses &amp; Protocol Summary</span>
+              <h3>Dual Spaces, Multilinear Forms, and Quadratic Spaces</h3>
+            </div>
+            <div style="display: flex; gap: 0.45rem; flex-wrap: wrap;">
+              <a class="doc-link pdf" href="tex/thesenpapier/session01-dual-spaces/session01-thesenpapier.pdf" target="_blank" rel="noopener">Thesenpapier 01 (PDF)</a>
+              <a class="doc-link pdf" href="tex/sitzungsprotokoll/session01-dual-spaces/session01-sitzungsprotokoll-2026-11-04.pdf" target="_blank" rel="noopener">Protocol 2026-11-04 (PDF)</a>
+            </div>
+          </div>
+
+          <div class="theses-grid">
+            <div class="thesis-item">
+              <span class="thesis-label">Thesis I.</span>
+              Identifying velocities with canonical momenta via Cartesian indices (\(p_i = m\dot{x}_i\)) obscures the duality between \(V\) and \(V^*\), hiding the geometric foundation of Hamiltonian mechanics and relativistic field theories.
+            </div>
+            <div class="thesis-item">
+              <span class="thesis-label">Thesis II.</span>
+              The free tensor algebra \(T(V)\) carries excess relation-free degrees of freedom; physical geometry only emerges after factoring out the ideal generated by measurement—the quadratic form \(q(v)\).
+            </div>
+            <div class="thesis-item">
+              <span class="thesis-label">Thesis III.</span>
+              A metric is not an intrinsic primitive of a linear space, but an auxiliary constitutive mapping \(b^\flat : V \to V^*\) converting kinematic displacements into linear measurement functionals.
+            </div>
+            <div class="thesis-item">
+              <span class="thesis-label">Thesis IV.</span>
+              Causal structure in relativistic physics is an algebraic consequence of signature \((1,3)\) on a four-dimensional real linear space, prior to differential geometry or pseudo-Riemannian metric tensors.
+            </div>
+          </div>
+
+          <div class="protocol-summary">
+            <strong>Resolved on 4 November 2026 (Scribe: Sebastián Rodríguez):</strong>
+            Dual bases transform by \(\tilde{\omega}^i = (T^{-1})^*\omega^i\) directly from invariance of the pairing \(\pair{\tilde{\omega}^j}{\tilde{e}_i} = \delta^j_i\); no canonical \(V \cong V^*\) exists outside isometries of \(b\), whereas \(\ev: V \to V^{**}\) is basis-independent and natural (\(T^{**}\circ\ev = \ev\circ T\)).
+            <strong>For Next Session:</strong> Prepare Problem 4 (\(p = m\,b^\flat(v)\), \(b^\sharp\), and \(H = \tfrac{1}{2m}b^*(p,p)\)).
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Interactive Syllabus, Work Plan & Tandem Register -->
+    <section id="syllabus" class="content-section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-number">Section 02</span>
+          <h2 class="section-title">
+            <span class="lang-en">Modular Syllabus, Work Plan &amp; Tandem Register</span>
+            <span class="lang-es">Programa Modular, Plan de Trabajo y Registro de Tándems</span>
+          </h2>
+          <p class="section-desc lang-en">
+            Switch between the complete 18-topic modular syllabus (<code>schedule.pdf</code>), the problem-driven 12-topic work plan (<code>work-plan.pdf</code>), and the current senior–junior tandem assignments.
+          </p>
+          <p class="section-desc lang-es">
+            Alterne entre el programa modular completo de 18 temas (<code>schedule.pdf</code>), el plan de trabajo guiado por problemas de 12 temas (<code>work-plan.pdf</code>) y el registro de tándems senior–junior.
+          </p>
+        </div>
+
+        <div class="view-tabs" role="tablist" aria-label="Syllabus views">
+          <button class="tab-btn active" role="tab" aria-selected="true" data-tab-target="modular" type="button">
+            <span class="lang-en">Modular Syllabus (Parts A–E · 18 Topics)</span>
+            <span class="lang-es">Programa Modular (Partes A–E · 18 Temas)</span>
+          </button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab-target="workplan" type="button">
+            <span class="lang-en">Problem-Driven Work Plan (Modules I–IV · 12 Topics)</span>
+            <span class="lang-es">Plan de Trabajo (Módulos I–IV · 12 Temas)</span>
+          </button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab-target="tandems" type="button">
+            <span class="lang-en">Tandem Assignments Register</span>
+            <span class="lang-es">Registro de Tándems</span>
+          </button>
+        </div>
+
+        <!-- Tab 1: Modular Syllabus (18 Topics) -->
+        <div class="syllabus-panel active" data-tab-panel="modular">
+          <div class="table-wrap">
+            <table class="booktabs-table">
+              <thead>
+                <tr>
+                  <th style="width: 72px;">Topic</th>
+                  <th style="width: 24%;">Subject</th>
+                  <th>Mathematical &amp; Physical Content</th>
+                  <th style="width: 22%;">Literature &amp; Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="part-row"><td colspan="4">Part A: Foundations and Geometric Analysis</td></tr>
+                <tr>
+                  <td class="topic-num">01</td>
+                  <td>
+                    <div class="topic-subject">Dual spaces, multilinear forms, and quadratic spaces</div>
+                    <span class="status-pill done">Session 01 Published</span>
+                  </td>
+                  <td>Dual linear space \(V^*\), dual pairing \(\pair{\cdot}{\cdot}\), tensor algebra \(T(V)\), symmetric bilinear forms, quadratic forms \(q(v)\), polarization, non-degeneracy, and signature \((p,q)\) over \(\R\).</td>
+                  <td>
+                    VR Chap. 1; Axler Chaps. 1–2; Fraleigh Chaps. 1.1–1.2, 7.33.<br />
+                    <a href="tex/thesenpapier/session01-dual-spaces/session01-thesenpapier.pdf" target="_blank" rel="noopener">Thesenpapier</a> ·
+                    <a href="tex/sitzungsprotokoll/session01-dual-spaces/session01-sitzungsprotokoll-2026-11-04.pdf" target="_blank" rel="noopener">Protocol</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="topic-num">02</td>
+                  <td>
+                    <div class="topic-subject">Universal Clifford construction and involutions</div>
+                    <span class="status-pill assigned">Tandem Assigned</span>
+                  </td>
+                  <td>Ideal \(\mathcal{I}_q = \langle v \otimes v - q(v)1 \rangle\), quotient algebra \(\Cl(V,q)\), universal property, \(\Z_2\)-grading, grade involution \(\hat{u}\), reversion \(\tilde{u}\), Clifford conjugation \(\bar{u}\), geometric product \(uv = u \cdot v + u \wedge v\).</td>
+                  <td>Lead: J. L. Avila-Martinez &amp; C. Martinez</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">03</td>
+                  <td><div class="topic-subject">Multivector structures, Lie algebras, and Spin groups</div></td>
+                  <td>Module isomorphism \(\Cl(V,q) \cong \bigwedge V\), blade projections, bivector Lie algebra \(\Cl^2(V,q) \cong \mathfrak{so}(p,q)\), Clifford and Lipschitz groups, \(\Pin(p,q)\), \(\Spin(p,q)\), and rotor transformations \(v \mapsto Rv\tilde{R}\).</td>
+                  <td>VR, DL</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">04</td>
+                  <td><div class="topic-subject">Clifford analysis and monogenic fields</div></td>
+                  <td>Vector derivative \(\nabla\), generalized Cauchy–Riemann operator, monogenic multivector fields \(\nabla\Phi = 0\), Cauchy kernel, Borel–Pompeiu integral formula, and coordinate-free multipole expansions of extended Keplerian sources.</td>
+                  <td>HS, DL</td>
+                </tr>
+
+                <tr class="part-row"><td colspan="4">Part B: Classical Kepler Dynamics in \(\Cl(3,0)\)</td></tr>
+                <tr>
+                  <td class="topic-num">05</td>
+                  <td><div class="topic-subject">Central forces and orbital angular momentum</div></td>
+                  <td>Equation of motion \(\dot{p} = -(k/r^3)r\), orbital angular momentum bivector \(L = r \wedge p\), conservation proof \(\dot{L} = 0\), planar confinement \(r \wedge L = 0\), coordinate-free duality via volume pseudoscalar \(I_3\).</td>
+                  <td>Hestenes (NFCM)</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">06</td>
+                  <td><div class="topic-subject">Laplace–Runge–Lenz vector and conics</div></td>
+                  <td>Multivector construction \(A = \frac{1}{mk}pL - \hat{r}\), algebraic proof of \(\dot{A} = 0\) without coordinate frames, orbit derivation via scalar contraction \(r \cdot A\), and invariant classification of conics.</td>
+                  <td>Hestenes (NFCM)</td>
+                </tr>
+
+                <tr class="part-row"><td colspan="4">Part C: Regularization, Harmonic Analysis, and Hidden Symmetries</td></tr>
+                <tr>
+                  <td class="topic-num">07</td>
+                  <td><div class="topic-subject">Kustaanheimo–Stiefel transformation</div></td>
+                  <td>Regularization of collision singularities at \(r \to 0\), spinor mapping \(x = u\sigma_3\tilde{u}\) with \(u \in \Cl^+(3,0) \cong \mathbb{H}\), Sundman time rescaling \(\dd t = r\,\dd s\), and \(U(1)\) gauge freedom.</td>
+                  <td>Hestenes, DL</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">08</td>
+                  <td><div class="topic-subject">Four-dimensional oscillator and \(\SO(4)\)</div></td>
+                  <td>Linearization to \(u'' + \frac{|E|}{2}u = 0\), four-dimensional isotropic harmonic oscillator, realization of \(\mathfrak{so}(4) \cong \mathfrak{su}(2) \oplus \mathfrak{su}(2)\) dynamical symmetry via \(L\) and \(A\), bound-state degeneracy.</td>
+                  <td>DL, Hestenes</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">09</td>
+                  <td><div class="topic-subject">Clifford–Fourier analysis and Fock projection</div></td>
+                  <td>Clifford–Fourier transform with pseudoscalar kernel \(e^{-I_3 k \cdot x}\), multivector uncertainty relations, Fock stereographic projection of the Coulomb problem onto \(S^3\), and bound states as spherical monogenics.</td>
+                  <td>HS</td>
+                </tr>
+
+                <tr class="part-row"><td colspan="4">Part D: Relativistic Dynamics in Spacetime Algebra \(\Cl(1,3)\)</td></tr>
+                <tr>
+                  <td class="topic-num">10</td>
+                  <td><div class="topic-subject">Spacetime algebra and observer split</div></td>
+                  <td>Dirac generators \(\{\gamma_\mu\}\), signature \((+,-,-,-)\), observer split via \(\gamma_0\), relative spatial bivectors \(\sigma_k = \gamma_k\gamma_0\), proper Lorentz rotors in \(\Spin^+(1,3)\), rotor kinematics \(\dot{R} = \frac{1}{2}\Omega R\), Thomas precession.</td>
+                  <td>Hestenes (STA), DL</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">11</td>
+                  <td><div class="topic-subject">Relativistic electrodynamics and Lorentz force</div></td>
+                  <td>Spacetime vector derivative \(\nabla = \gamma^\mu\partial_\mu\), Faraday bivector \(F = E + I_4 B\), Maxwell system \(\nabla F = J\), relativistic equation of motion \(\dot{p} = e F \cdot u\), proper-time rotor integration.</td>
+                  <td>Hestenes (STA), DL, Girard</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">12</td>
+                  <td><div class="topic-subject">Relativistic central forces and perihelion advance</div></td>
+                  <td>Relativistic central potentials, breakdown of LRL vector conservation, energy-dependent dynamical corrections, and calculation of special-relativistic perihelion advance.</td>
+                  <td>DL, Hestenes</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">13</td>
+                  <td><div class="topic-subject">Gauge Theory Gravity and planetary orbits</div></td>
+                  <td>Position gauge field \(\bar{h}(a)\) and rotation gauge field \(\bar{\Omega}(a)\) on Minkowski background, spherically symmetric solutions, geodesic rotor trajectories, and general-relativistic orbital precession.</td>
+                  <td>DL</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">14</td>
+                  <td><div class="topic-subject">Geometric thermodynamics in spacetime algebra</div></td>
+                  <td>Conserved particle flux \(N = nu\), stress-energy operator \(T(a)\), entropy current \(S = su\), invariant thermal 1-vector \(\beta = u/(k_{\mathrm{B}}T)\), Killing equilibrium \(\nabla \wedge \beta = 0\), and Tolman–Ehrenfest gradients.</td>
+                  <td>DL, STA literature</td>
+                </tr>
+
+                <tr class="part-row"><td colspan="4">Part E: Quantum Kepler Problem and Dirac–Hestenes Theory</td></tr>
+                <tr>
+                  <td class="topic-num">15</td>
+                  <td><div class="topic-subject">Real Pauli algebra and spatial spin</div></td>
+                  <td>Spatial algebra \(\Cl(3,0)\) without matrix representations, unit spatial vectors as spin observables, Pauli multivector wave equation, spin-orbit coupling from the geometric product.</td>
+                  <td>DL, Hestenes</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">16</td>
+                  <td><div class="topic-subject">Dirac–Hestenes field equation</div></td>
+                  <td>Spacetime algebra representation of the Dirac equation, even multivector field \(\Psi \in \Cl^+(1,3)\), spin plane \(\gamma_2\gamma_1\), polar form \(\Psi = \rho^{1/2}e^{I_4\beta/2}R\), current \(J = \Psi\gamma_0\tilde{\Psi}\), spin bivector \(S = \frac{1}{2}\hbar\Psi\gamma_3\tilde{\Psi}\).</td>
+                  <td>DL, Hestenes (STA), VR</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">17</td>
+                  <td><div class="topic-subject">Exact solution of the relativistic hydrogen atom</div></td>
+                  <td>Separation of variables in spherical coordinates within \(\Cl^+(1,3)\), rotor spherical harmonics, radial differential equations in the even subalgebra, derivation of the Sommerfeld–Dirac energy spectrum.</td>
+                  <td>DL</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">18</td>
+                  <td><div class="topic-subject">Fine structure, Darwin term, and zitterbewegung</div></td>
+                  <td>Non-relativistic expansion of the Dirac–Hestenes equation, geometric origin of the Darwin correction, rotor phase dynamics, lightlike field circulation, field-theoretic interpretation of zitterbewegung.</td>
+                  <td>DL, Hestenes</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab 2: Problem-Driven Work Plan (12 Topics) -->
+        <div class="syllabus-panel" data-tab-panel="workplan">
+          <div class="table-wrap">
+            <table class="booktabs-table">
+              <thead>
+                <tr>
+                  <th style="width: 72px;">Topic</th>
+                  <th style="width: 96px;">Module</th>
+                  <th style="width: 34%;">Mathematical Structure</th>
+                  <th>Guiding Physical Problem</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="part-row"><td colspan="4">Module I: The Linear Space Backbone and Oscillatory Systems</td></tr>
+                <tr>
+                  <td class="topic-num">01</td>
+                  <td>Module I</td>
+                  <td class="topic-subject">Linear spaces, duals, quadratic forms</td>
+                  <td>Metric geometry of physical states and covectorial observables on \(V\) and \(V^*\).</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">02</td>
+                  <td>Module I</td>
+                  <td class="topic-subject">Self-adjoint operators, spectral theorem</td>
+                  <td>Decoupling \(N\) coupled harmonic oscillators \(\ddot{u} + Ku = 0\) into independent normal modes via invariant subspaces.</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">03</td>
+                  <td>Module I</td>
+                  <td class="topic-subject">Function spaces, Fourier diagonalization</td>
+                  <td>Wave equation \((\partial_t^2 - c^2\nabla^2)\Phi = 0\) and Klein–Gordon field as an infinite family of decoupled harmonic oscillators.</td>
+                </tr>
+
+                <tr class="part-row"><td colspan="4">Module II: Continuous Symmetries, Lie Algebras, and Clifford Algebras</td></tr>
+                <tr>
+                  <td class="topic-num">04</td>
+                  <td>Module II</td>
+                  <td class="topic-subject">Exponential map, commutators, Lie algebras</td>
+                  <td>Continuous rotational invariance preserving \(q(v)\) and emergence of \(\mathfrak{so}(3) \cong \mathfrak{su}(2)\).</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">05</td>
+                  <td>Module II</td>
+                  <td class="topic-subject">Quotient tensor algebra \(\Cl(V,q)\)</td>
+                  <td>Unifying metric projection and planar orientation in vector multiplication \(uv = u \cdot v + u \wedge v\).</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">06</td>
+                  <td>Module II</td>
+                  <td class="topic-subject">Bivector algebra \(\Cl^2(V,q)\), \(\Spin(p,q)\)</td>
+                  <td>Coordinate-free orthogonal transformations \(v \mapsto Rv\tilde{R}\) and the spinor double cover \(\Spin(3) \to \SO(3)\).</td>
+                </tr>
+
+                <tr class="part-row"><td colspan="4">Module III: Central Force Dynamics and the \(\SO(4)\) Kepler Symmetry</td></tr>
+                <tr>
+                  <td class="topic-num">07</td>
+                  <td>Module III</td>
+                  <td class="topic-subject">Exterior product &amp; bivector conservation</td>
+                  <td>Central force dynamics \(\dot{p} = -f((r^2)^{1/2})r\) and planar confinement via \(L = r \wedge p\).</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">08</td>
+                  <td>Module III</td>
+                  <td class="topic-subject">Geometric product \(pL = p \cdot L + p \wedge L\)</td>
+                  <td>Inverse-square Kepler problem and coordinate-free Laplace–Runge–Lenz invariant \(A\).</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">09</td>
+                  <td>Module III</td>
+                  <td class="topic-subject">Lie bracket closure on energy manifolds</td>
+                  <td>Hidden \(\mathfrak{so}(4) \cong \mathfrak{su}(2) \oplus \mathfrak{su}(2)\) dynamical symmetry and isotropic oscillator duality.</td>
+                </tr>
+
+                <tr class="part-row"><td colspan="4">Module IV: Relativistic Field Equations in Spacetime Algebra</td></tr>
+                <tr>
+                  <td class="topic-num">10</td>
+                  <td>Module IV</td>
+                  <td class="topic-subject">Minkowski Clifford algebra \(\Cl(1,3)\)</td>
+                  <td>Lorentz boosts, spatial rotations, and observer spacetime split \(\sigma_k = \gamma_k\gamma_0\).</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">11</td>
+                  <td>Module IV</td>
+                  <td class="topic-subject">Vector derivative \(\nabla\) &amp; Faraday bivector \(F\)</td>
+                  <td>Unification of Maxwell's equations into \(\nabla F = J\) and relativistic radiation oscillator modes.</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">12</td>
+                  <td>Module IV</td>
+                  <td class="topic-subject">Even subalgebra \(\Cl^+(1,3)\)</td>
+                  <td>First-order factorization of the Klein–Gordon operator and geometric formulation of the Dirac spinor field.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab 3: Tandem Assignments Register -->
+        <div class="syllabus-panel" data-tab-panel="tandems">
+          <div class="table-wrap">
+            <table class="booktabs-table">
+              <thead>
+                <tr>
+                  <th style="width: 72px;">Topic</th>
+                  <th>Subject</th>
+                  <th>Senior / Lead (Referat)</th>
+                  <th>Junior Collaborator</th>
+                  <th>Respondent (Korreferat)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="topic-num">01</td>
+                  <td class="topic-subject">Dual spaces and quadratic forms</td>
+                  <td>J. L. Avila-Martinez</td>
+                  <td>—</td>
+                  <td>Plenary (Scribe: S. Rodríguez)</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">02</td>
+                  <td class="topic-subject">Universal Clifford construction</td>
+                  <td>J. L. Avila-Martinez</td>
+                  <td>C. Martinez</td>
+                  <td><em>Open</em></td>
+                </tr>
+                <tr>
+                  <td class="topic-num">03–18</td>
+                  <td class="topic-subject">Multivectors &amp; Spin through Fine Structure &amp; Zitterbewegung</td>
+                  <td colspan="3">
+                    <span class="lang-en">Senior–Junior tandems and respondents are assigned sequentially as topics progress. See <a href="schedule/2026-2/schedule.pdf" target="_blank" rel="noopener"><code>schedule.pdf</code> Table 3</a> for the live register.</span>
+                    <span class="lang-es">Los tándems Senior–Junior y comentaristas se asignan secuencialmente a medida que avanzan los temas. Consulte la <a href="schedule/2026-2/schedule.pdf" target="_blank" rel="noopener">Tabla 3 de <code>schedule.pdf</code></a>.</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Methodology -->
+    <section id="methodology" class="content-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-number">Section 03</span>
+          <h2 class="section-title">
+            <span class="lang-en">Seminar Methodology &amp; Colloquium Format</span>
+            <span class="lang-es">Metodología y Estructura del Coloquio</span>
+          </h2>
+          <p class="section-desc lang-en">
+            Inspired by the German academic research seminar tradition, sessions reject passive slide lectures in favor of direct blackboard derivations, structured critical response, and permanent written documentation.
+          </p>
+          <p class="section-desc lang-es">
+            Inspirado en la tradición alemana del seminario académico de investigación, cada sesión privilegia la derivación directa en tablero, la réplica crítica estructurada y la documentación archivística permanente.
+          </p>
+        </div>
+
+        <div class="roles-grid">
+          <article class="role-card">
+            <h3>Referat</h3>
+            <span class="role-subtitle">Lead Blackboard Exposition</span>
+            <p class="lang-en">Delivered jointly by the assigned senior–junior tandem. Focuses on step-by-step blackboard derivations of primary equations, foregrounding conceptual hypotheses and algebraic transitions over projected slides.</p>
+            <p class="lang-es">Exposición conjunta del tándem asignado centrada en derivaciones paso a paso en tablero, priorizando las hipótesis conceptuales y transiciones algebraicas sobre diapositivas proyectadas.</p>
+          </article>
+
+          <article class="role-card">
+            <h3>Korreferat</h3>
+            <span class="role-subtitle">Respondent Critique</span>
+            <p class="lang-en">A designated respondent delivers critical commentary right after the Referat, testing implicit assumptions, contrasting results with matrix/coordinate formalisms, identifying pathologies, and opening debate.</p>
+            <p class="lang-es">Un participante asignado presenta una réplica crítica tras el Referat: examina hipótesis implícitas, contrasta con formalismos matriciales o coordenados y formula preguntas guía.</p>
+          </article>
+
+          <article class="role-card">
+            <h3>Thesenpapier</h3>
+            <span class="role-subtitle">Position Paper (≥ 5 Days Prior)</span>
+            <p class="lang-en">A concise memorandum circulated by the presenting tandem at least five days before meeting, containing formal definitions, key algebraic identities, preparatory exercises, and explicit theses for plenary debate.</p>
+            <p class="lang-es">Memorando conciso circulado al menos cinco días antes de la sesión con definiciones formales, identidades clave, ejercicios preparatorios y tesis explícitas para el debate plenario.</p>
+          </article>
+
+          <article class="role-card">
+            <h3>Sitzungsprotokoll</h3>
+            <span class="role-subtitle">Session Record (≤ 7 Days After)</span>
+            <p class="lang-en">A rotating scribe documents blackboard derivations, corrections, resolved debates, and open problems, archiving the finalized protocol in this repository within seven days of the session.</p>
+            <p class="lang-es">Un relator rotativo registra las derivaciones en tablero, correcciones, debates resueltos y preguntas abiertas, archivando el acta definitiva en el repositorio en los siete días posteriores.</p>
+          </article>
+        </div>
+
+        <div class="methodology-split">
+          <div class="table-wrap">
+            <table class="booktabs-table">
+              <thead>
+                <tr>
+                  <th>Phase</th>
+                  <th>Duration</th>
+                  <th>Content</th>
+                  <th>Responsible</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="topic-num">I</td>
+                  <td>40 min</td>
+                  <td>Live blackboard derivation (<em>Referat</em>)</td>
+                  <td>Presenting tandem</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">II</td>
+                  <td>10 min</td>
+                  <td>Critical response &amp; opening theses (<em>Korreferat</em>)</td>
+                  <td>Respondent</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">III</td>
+                  <td>35 min</td>
+                  <td>Plenary debate &amp; physical interpretation</td>
+                  <td>All participants</td>
+                </tr>
+                <tr>
+                  <td class="topic-num">IV</td>
+                  <td>5 min</td>
+                  <td>Synthesis of open questions &amp; preview</td>
+                  <td>Seminar leader</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <aside class="scholium-box">
+            <h3>
+              <span class="lang-en">Tandem Mentorship &amp; Preparation Cadence</span>
+              <span class="lang-es">Mentoría en Tándem y Cadencia Preparatoria</span>
+            </h3>
+            <p class="lang-en">
+              Starting with Topic 2, expositions pair a <strong>senior</strong> participant with a <strong>junior</strong> collaborator to share blackboard duties equally while fostering peer mentorship in multilinear algebra and relativistic dynamics.
+            </p>
+            <p class="lang-es">
+              Desde el Tema 2, cada exposición empareja un participante <strong>senior</strong> con un colaborador <strong>junior</strong> para compartir el tablero en igualdad de condiciones y fomentar la mentoría entre pares.
+            </p>
+            <p class="lang-en">
+              Preparatory meetings with the seminar leader take place <strong>two weeks</strong> and <strong>five days</strong> before each session. Every attendee submits at least one written question on the <em>Thesenpapier</em> <strong>24 hours</strong> prior to meeting.
+            </p>
+            <p class="lang-es">
+              Las reuniones preparatorias con el guía ocurren <strong>dos semanas</strong> y <strong>cinco días</strong> antes de cada sesión. Cada asistente envía al menos una pregunta escrita sobre el <em>Thesenpapier</em> <strong>24 horas</strong> antes.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: LaTeX Templates & Authoring Kit -->
+    <section id="templates" class="content-section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-number">Section 04</span>
+          <h2 class="section-title">
+            <span class="lang-en">LaTeX Monograph Templates &amp; Authoring Kit</span>
+            <span class="lang-es">Plantillas LaTeX y Kit de Autoría</span>
+          </h2>
+          <p class="section-desc lang-en">
+            All seminar documents share <code>tex/templates/clifford-seminar.sty</code>—built in a classic Springer/Birkhäuser print aesthetic with Latin Modern serif typography, pure black body text, deep oxblood (<code>#7D1128</code>) structural rules, and automatic logo &amp; bibliography resolution.
+          </p>
+          <p class="section-desc lang-es">
+            Todos los documentos del seminario comparten <code>tex/templates/clifford-seminar.sty</code>, diseñado bajo la estética editorial de Springer/Birkhäuser con tipografía serif Latin Modern, reglas en rojo oxblood (<code>#7D1128</code>) y resolución automática del logo y bibliografía.
+          </p>
+        </div>
+
+        <div class="kit-grid">
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <div class="code-block-card">
+              <div class="code-block-head">
+                <span>Quick Start — New Thesenpapier</span>
+                <button class="copy-btn" type="button" data-copy-target="cmd-thesen">Copy</button>
+              </div>
+              <pre id="cmd-thesen">mkdir -p tex/thesenpapier/session02-universal-clifford
+cp tex/templates/thesenpapier/thesenpapier-template.tex \
+   tex/thesenpapier/session02-universal-clifford/session02-thesenpapier.tex
+cd tex/thesenpapier/session02-universal-clifford
+latexmk -pdf session02-thesenpapier.tex</pre>
+            </div>
+
+            <div class="code-block-card">
+              <div class="code-block-head">
+                <span>Quick Start — New Sitzungsprotokoll</span>
+                <button class="copy-btn" type="button" data-copy-target="cmd-proto">Copy</button>
+              </div>
+              <pre id="cmd-proto">mkdir -p tex/sitzungsprotokoll/session02-universal-clifford
+cp tex/templates/sitzungsprotokoll/sitzungsprotokoll-template.tex \
+   tex/sitzungsprotokoll/session02-universal-clifford/session02-sitzungsprotokoll-YYYY-MM-DD.tex
+cd tex/sitzungsprotokoll/session02-universal-clifford
+latexmk -pdf session02-sitzungsprotokoll-YYYY-MM-DD.tex</pre>
+            </div>
+          </div>
+
+          <div class="scholium-box" style="border-left-color: var(--oxblood);">
+            <h3><code>clifford-seminar.sty</code> · Package Overview</h3>
+            <p class="lang-en">
+              Because <code>tex/templates/&lt;kind&gt;/</code> sits at the exact directory depth as <code>tex/&lt;kind&gt;/sessionNN-&lt;slug&gt;/</code>, copying a template requires <strong>zero path edits</strong> to the style package, logo emblem, or shared Zotero bibliography.
+            </p>
+            <p class="lang-es">
+              Como <code>tex/templates/&lt;tipo&gt;/</code> está a la misma profundidad que <code>tex/&lt;tipo&gt;/sessionNN-&lt;slug&gt;/</code>, copiar una plantilla no requiere <strong>ningún cambio de rutas</strong> para el paquete, emblema o bibliografía.
+            </p>
+
+            <p style="font-size: 0.84rem; margin-top: 0.5rem;">
+              <strong>Shared Mathematical Macros:</strong>
+            </p>
+            <div class="macro-list">
+              <code>\Cl</code>
+              <code>\R</code>
+              <code>\C</code>
+              <code>\Q</code>
+              <code>\Z</code>
+              <code>\Spin</code>
+              <code>\Pin</code>
+              <code>\SO</code>
+              <code>\SU</code>
+              <code>\ev</code>
+              <code>\rad</code>
+              <code>\Hom</code>
+              <code>\pair{a}{b}</code>
+              <code>\grade{A}{k}</code>
+              <code>\rev{u}</code>
+              <code>\ginv{u}</code>
+              <code>\clconj{u}</code>
+              <code>\dd</code>
+            </div>
+
+            <div class="card-actions" style="margin-top: 1.15rem;">
+              <a class="doc-link pdf" href="tex/templates/thesenpapier/thesenpapier-template.pdf" target="_blank" rel="noopener">Thesenpapier PDF</a>
+              <a class="doc-link pdf" href="tex/templates/sitzungsprotokoll/sitzungsprotokoll-template.pdf" target="_blank" rel="noopener">Protocol PDF</a>
+              <a class="doc-link tex" href="tex/templates/clifford-seminar.sty" target="_blank" rel="noopener">clifford-seminar.sty</a>
+              <a class="doc-link" href="https://github.com/Julian-L-Avila/Clifford-Seminar-Group/blob/main/tex/templates/README.md" target="_blank" rel="noopener">Templates Guide ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Shared Bibliography -->
+    <section id="bibliography" class="content-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-number">Section 05</span>
+          <h2 class="section-title">
+            <span class="lang-en">Shared Seminar Bibliography</span>
+            <span class="lang-es">Bibliografía Compartida del Seminario</span>
+          </h2>
+          <p class="section-desc lang-en">
+            Foundational textbooks and articles from <code>bibliography/clifford-seminar-group.bib</code>. Copy clean BibTeX citations directly or download the complete shared <code>.bib</code> file for <code>biblatex</code>/<code>biber</code>.
+          </p>
+          <p class="section-desc lang-es">
+            Textos y artículos fundamentales de <code>bibliography/clifford-seminar-group.bib</code>. Copie citas BibTeX limpias con un clic o descargue el archivo <code>.bib</code> completo para <code>biblatex</code>/<code>biber</code>.
+          </p>
+        </div>
+
+        <div class="toolbar">
+          <a class="btn btn-primary" href="bibliography/clifford-seminar-group.bib" download>
+            <span class="lang-en">Download Full .bib File</span>
+            <span class="lang-es">Descargar Archivo .bib</span>
+          </a>
+          <div class="search-wrap">
+            <label for="bib-search" class="sr-only">Filter bibliography</label>
+            <input id="bib-search" class="search-input" type="search" placeholder="Filter references by author, title, or abbreviation..." />
+          </div>
+        </div>
+
+        <div class="bib-grid" id="bib-grid">
+          <article class="bib-card">
+            <div class="bib-head">
+              <span class="bib-abbr">VR · Primary</span>
+              <span class="bib-year">2016</span>
+            </div>
+            <div class="bib-title">Introduction to Clifford Algebras and Spinors</div>
+            <div class="bib-authors">Jayme Vaz &amp; Roldão da Rocha</div>
+            <div class="bib-pub">Oxford University Press · Oxford · ISBN 978-0-19-878292-6</div>
+            <div class="bib-actions">
+              <button class="doc-link" type="button" data-copy-bib="vazIntroductionCliffordAlgebras2016">Copy BibTeX</button>
+            </div>
+          </article>
+
+          <article class="bib-card">
+            <div class="bib-head">
+              <span class="bib-abbr">DL · Primary</span>
+              <span class="bib-year">2013</span>
+            </div>
+            <div class="bib-title">Geometric Algebra for Physicists</div>
+            <div class="bib-authors">Chris Doran &amp; Anthony Lasenby</div>
+            <div class="bib-pub">Cambridge University Press · Cambridge · 578 pp.</div>
+            <div class="bib-actions">
+              <a class="doc-link pdf" href="https://doi.org/10.1017/CBO9780511807497" target="_blank" rel="noopener">DOI ↗</a>
+              <button class="doc-link" type="button" data-copy-bib="doranGeometricAlgebraPhysicists2013">Copy BibTeX</button>
+            </div>
+          </article>
+
+          <article class="bib-card">
+            <div class="bib-head">
+              <span class="bib-abbr">HS · Primary</span>
+              <span class="bib-year">1984</span>
+            </div>
+            <div class="bib-title">Clifford Algebra to Geometric Calculus</div>
+            <div class="bib-authors">David Hestenes &amp; Garret Sobczyk</div>
+            <div class="bib-pub">Springer Netherlands · Dordrecht</div>
+            <div class="bib-actions">
+              <a class="doc-link pdf" href="https://doi.org/10.1007/978-94-009-6292-7" target="_blank" rel="noopener">DOI ↗</a>
+              <button class="doc-link" type="button" data-copy-bib="hestenesCliffordAlgebraGeometric1984">Copy BibTeX</button>
+            </div>
+          </article>
+
+          <article class="bib-card">
+            <div class="bib-head">
+              <span class="bib-abbr">STA</span>
+              <span class="bib-year">2015</span>
+            </div>
+            <div class="bib-title">Space-Time Algebra</div>
+            <div class="bib-authors">David Hestenes</div>
+            <div class="bib-pub">Springer International Publishing · Cham</div>
+            <div class="bib-actions">
+              <a class="doc-link pdf" href="https://doi.org/10.1007/978-3-319-18413-5" target="_blank" rel="noopener">DOI ↗</a>
+              <button class="doc-link" type="button" data-copy-bib="hestenesSpaceTimeAlgebra2015">Copy BibTeX</button>
+            </div>
+          </article>
+
+          <article class="bib-card">
+            <div class="bib-head">
+              <span class="bib-abbr">NFCM</span>
+              <span class="bib-year">2002</span>
+            </div>
+            <div class="bib-title">New Foundations for Classical Mechanics</div>
+            <div class="bib-authors">David Hestenes</div>
+            <div class="bib-pub">Kluwer Academic Publishers · 2nd ed. · Fundamental Theories of Physics, Vol. 99</div>
+            <div class="bib-actions">
+              <a class="doc-link pdf" href="https://doi.org/10.1007/0-306-47122-1" target="_blank" rel="noopener">DOI ↗</a>
+              <button class="doc-link" type="button" data-copy-bib="hestenesNewFoundationsClassical2002">Copy BibTeX</button>
+            </div>
+          </article>
+
+          <article class="bib-card">
+            <div class="bib-head">
+              <span class="bib-abbr">Article</span>
+              <span class="bib-year">2003</span>
+            </div>
+            <div class="bib-title">Oersted Medal Lecture 2002: Reforming the Mathematical Language of Physics</div>
+            <div class="bib-authors">David Hestenes</div>
+            <div class="bib-pub">American Journal of Physics, 71(2), 104–121</div>
+            <div class="bib-actions">
+              <a class="doc-link pdf" href="https://doi.org/10.1119/1.1522700" target="_blank" rel="noopener">DOI ↗</a>
+              <button class="doc-link" type="button" data-copy-bib="hestenesOerstedMedalLecture2003">Copy BibTeX</button>
+            </div>
+          </article>
+
+          <article class="bib-card">
+            <div class="bib-head">
+              <span class="bib-abbr">Monograph</span>
+              <span class="bib-year">2007</span>
+            </div>
+            <div class="bib-title">Quaternions, Clifford Algebras and Relativistic Physics</div>
+            <div class="bib-authors">Patrick R. Girard (Ed.)</div>
+            <div class="bib-pub">Birkhäuser Verlag AG · Basel · 179 pp.</div>
+            <div class="bib-actions">
+              <a class="doc-link pdf" href="https://doi.org/10.1007/978-3-7643-7791-5" target="_blank" rel="noopener">DOI ↗</a>
+              <button class="doc-link" type="button" data-copy-bib="girardQuaternionsCliffordAlgebras2007">Copy BibTeX</button>
+            </div>
+          </article>
+
+          <article class="bib-card">
+            <div class="bib-head">
+              <span class="bib-abbr">Foundations</span>
+              <span class="bib-year">2015</span>
+            </div>
+            <div class="bib-title">Linear Algebra Done Right</div>
+            <div class="bib-authors">Sheldon Axler</div>
+            <div class="bib-pub">Springer International Publishing · Undergraduate Texts in Mathematics</div>
+            <div class="bib-actions">
+              <a class="doc-link pdf" href="https://doi.org/10.1007/978-3-319-11080-6" target="_blank" rel="noopener">DOI ↗</a>
+              <button class="doc-link" type="button" data-copy-bib="axlerLinearAlgebraDone2015">Copy BibTeX</button>
+            </div>
+          </article>
+
+          <article class="bib-card">
+            <div class="bib-head">
+              <span class="bib-abbr">Foundations</span>
+              <span class="bib-year">2021</span>
+            </div>
+            <div class="bib-title">A First Course in Abstract Algebra</div>
+            <div class="bib-authors">John B. Fraleigh &amp; Victor J. Katz</div>
+            <div class="bib-pub">Pearson · 8th ed. · World Student Series · 424 pp.</div>
+            <div class="bib-actions">
+              <button class="doc-link" type="button" data-copy-bib="fraleighFirstCourseAbstract2021">Copy BibTeX</button>
+            </div>
+          </article>
+        </div>
+
+        <p id="bib-empty" class="empty-state">
+          <span class="lang-en">No bibliography entries match your search.</span>
+          <span class="lang-es">Ninguna referencia coincide con su búsqueda.</span>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.jpg" alt="Clifford Seminar Group Logo" width="44" height="44" />
+        <div>
+          <strong>Clifford Seminar Group</strong> · Universidad Distrital Francisco José de Caldas<br />
+          <span style="opacity: 0.8;">
+            <span class="lang-en">Led by Julian L. Avila-Martinez · Bogotá D.C., Colombia</span>
+            <span class="lang-es">Dirigido por Julian L. Avila-Martinez · Bogotá D.C., Colombia</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://github.com/Julian-L-Avila/Clifford-Seminar-Group" class="footer-link" target="_blank" rel="noopener">GitHub Repo</a>
+        <a href="https://julian-l-avila.github.io/JulianLAvila/" class="footer-link" target="_blank" rel="noopener">Julian L. Avila-Martinez</a>
+        <a href="schedule/2026-2/schedule.pdf" class="footer-link" target="_blank" rel="noopener">Syllabus PDF</a>
+        <a href="bibliography/clifford-seminar-group.bib" class="footer-link">BibTeX</a>
+        <a href="sitemap.xml" class="footer-link">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
