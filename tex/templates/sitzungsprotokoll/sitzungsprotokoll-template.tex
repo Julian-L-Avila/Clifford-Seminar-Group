@@ -1,0 +1,168 @@
+% =============================================================================
+% Clifford Seminar Group — Sitzungsprotokoll Template
+%
+% How to use this template:
+%   1. Copy this file to:
+%        tex/sitzungsprotokoll/sessionNN-<slug>/sessionNN-sitzungsprotokoll-YYYY-MM-DD.tex
+%   2. Fill in the session metadata card (\seminartitle, \seminartopicref,
+%      \seminarreferat, \seminarscribe, \seminarpresent, etc.).
+%   3. Compile with:
+%        latexmk -pdf sessionNN-sitzungsprotokoll-YYYY-MM-DD.tex
+%      (If the protocol contains no citations, a single pdflatex pass twice
+%       is sufficient; pass [sitzungsprotokoll,nobib] if biblatex is unused.)
+%
+% Relative paths to clifford-seminar.sty, assets/logo.jpg, and
+% bibliography/clifford-seminar-group.bib work identically here and in any
+% tex/sitzungsprotokoll/sessionNN-<slug>/ directory.
+% =============================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[sitzungsprotokoll]{../../templates/clifford-seminar}
+
+% -----------------------------------------------------------------------------
+% Session Metadata (Edit for each meeting)
+% -----------------------------------------------------------------------------
+\seminartitle[Session NN Record]{%
+  Universal Clifford Construction and the Geometric Product%
+}
+\seminarsubtitle{Template Session Record --- Replace with Session Focus}
+\seminarsession{Session NN}
+\seminarmodule{Module II}
+\seminardate{DD Month YYYY}
+\seminarinstitution{Universidad Distrital Francisco Jos\'e de Caldas}
+
+\seminartopicref{Thesenpapier NN --- Universal Clifford Construction, Involutions, and the Geometric Product}
+\seminarreferat{Senior Name \& Junior Name}
+\seminarkorreferat{Respondent Name}
+\seminarscribe{Scribe Name}
+\seminarpresent{Participant A, Participant B, Participant C, Participant D}
+\seminaronline{Participant E, Participant F} % Leave empty if no online attendees
+
+\begin{document}
+
+\makeseminarheader
+
+% =============================================================================
+\section{Recap and Opening Context}
+\label{sec:recap}
+% =============================================================================
+
+Begin with a brief synthesis of how the meeting opened: continuity from the
+previous session, any unresolved exercise revisited at the blackboard, and
+the core question framing the day's derivations.
+
+We opened by recalling from Session~01 that a symmetric bilinear form $b$ on
+a real linear space $V$ induces the musical isomorphism $b^\flat : V \to V^*$,
+and that the free tensor algebra $T(V)$ imposes no metric relations among its
+generators. The guiding question for this session was how to quotient $T(V)$
+by the quadratic form $q(v) = b(v, v)$ without losing associativity.
+
+% =============================================================================
+\section{Blackboard Derivations (Referat)}
+\label{sec:derivations}
+% =============================================================================
+
+Document the live blackboard derivations faithfully, highlighting logical
+transitions, key equations, and moments where the group paused to verify
+hypotheses or correct signs.
+
+\subsection{Quotient Construction and Anticommutation}
+\label{subsec:quotient}
+
+Starting from the ideal $\mathcal{I}_q = \langle v \otimes v - q(v) 1 \rangle
+\subset T(V)$, the speakers formed the quotient $\Cl(V,q) = T(V)/\mathcal{I}_q$
+and applied the relation $(u + v)^2 = q(u + v) 1$ to obtain
+\begin{equation}
+  \label{eq:proto-polarization}
+  uv + vu = 2\, b(u, v) 1.
+\end{equation}
+Two immediate consequences were noted at the board:
+\begin{itemize}
+  \item Orthogonal vectors ($b(u,v) = 0$) strictly anticommute: $uv = -vu$.
+  \item Any non-null vector ($q(v) \neq 0$) admits a unique multiplicative
+    inverse given by $v^{-1} = v / q(v)$.
+\end{itemize}
+
+\begin{discussionnote}[Board Clarification --- Invertibility of Null Vectors]
+  A participant asked whether $v^{-1} = v / q(v)$ fails in Minkowski
+  spacetime $\R^{1,3}$. The group verified that lightlike (null) vectors
+  satisfy $q(v) = 0$ and therefore form zero divisors ($v^2 = 0$) rather than
+  invertible elements. This distinction will become essential when analyzing
+  null bivectors and electromagnetic plane waves in Module~IV.
+\end{discussionnote}
+
+\subsection{Decomposition of the Geometric Product}
+\label{subsec:decomp}
+
+Splitting the product of two vectors into symmetric and antisymmetric parts
+yielded
+\[
+  uv = \underbrace{\frac{1}{2}(uv + vu)}_{u \cdot v}
+     + \underbrace{\frac{1}{2}(uv - vu)}_{u \wedge v}.
+\]
+In $\Cl(3,0)$ with orthonormal basis $\{e_1, e_2, e_3\}$, the speakers verified
+explicitly that $(e_1 e_2)^2 = e_1 e_2 e_1 e_2 = -e_1^2 e_2^2 = -1$, showing
+that unit spatial bivectors act algebraically as generators of rotations
+without introducing complex scalars.
+
+% =============================================================================
+\section{Respondent Critique (Korreferat) and Plenary Debate}
+\label{sec:debate}
+% =============================================================================
+
+Summarize the respondent's critical observations and the plenary discussion
+structured around the theses from the \emph{Thesenpapier}.
+
+\paragraph{Thesis~I (Geometric Product vs.\ Cross Product).}
+The respondent compared the bivector $u \wedge v$ with the traditional vector
+cross product $\vec{u} \times \vec{v}$ in $\R^3$, noting that the two are
+linked only through Hodge duality with the Euclidean pseudoscalar
+$I_3 = e_1 e_2 e_3$:
+\[
+  u \wedge v = I_3\, (u \times v).
+\]
+Plenary discussion emphasized that while $u \times v$ is restricted to three
+dimensions and flips sign spuriously under spatial inversion (axial vs.\ polar
+vectors), the bivector $u \wedge v$ is well-defined in any dimension and
+transforms naturally under reflections.
+
+\paragraph{Pedagogical Note on Grading.}
+There was brief confusion over why $\Cl(V, q)$ is only $\Z_2$-graded as an
+algebra while still having blades of grade $0, 1, \dots, n$. It was clarified
+that multiplying two grade-$1$ vectors produces a sum of grade-$0$ and
+grade-$2$ terms, preserving parity (even/odd) rather than strict integer
+degree \cite[Sect.~2.2]{vazIntroductionCliffordAlgebras2016}.
+
+% =============================================================================
+\section{Conclusions, Open Problems, and Next Session}
+\label{sec:conclusions}
+% =============================================================================
+
+\begin{takeaways}[Resolved Conclusions]
+  \begin{enumerate}
+    \item The Clifford relation $v^2 = q(v) 1$ uniquely couples the metric
+      structure of $(V, q)$ to an associative algebra product via
+      \cref{eq:proto-polarization}.
+    \item Non-null vectors are invertible in $\Cl(V, q)$ via $v^{-1} = v/q(v)$,
+      whereas null vectors in indefinite signatures are zero divisors.
+    \item Oriented planes are represented directly by bivectors $u \wedge v$,
+      avoiding dimension-specific cross products.
+  \end{enumerate}
+\end{takeaways}
+
+\begin{nextsession}[Open Questions \& Preparation for Next Session]
+  \begin{itemize}
+    \item \textbf{Unfinished item:} Complete the universal-property proof of
+      the grade involution $\ginv{u}$ and reversion $\rev{u}$ (deferred due to
+      time).
+    \item \textbf{Exercises to prepare:} Problem~2(b) ($\Cl^+(3,0) \cong
+      \mathbb{H}$) and Problem~3 from Thesenpapier~NN.
+    \item \textbf{Next session responsibility:} Assign the next protocol scribe
+      and confirm preparatory meeting date with the seminar leader.
+  \end{itemize}
+\end{nextsession}
+
+% Uncomment the following line if this protocol cites works from the shared .bib file:
+\printbibliography[title={References Cited in Discussion}]
+
+\end{document}

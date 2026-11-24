@@ -1,0 +1,613 @@
+% =============================================================================
+% clifford-seminar.sty
+% Standard Academic LaTeX Style for the Clifford Seminar Group
+% Universidad Distrital Francisco José de Caldas
+%
+% Design language:
+%   - Classic Springer / Birkhäuser academic monograph & journal aesthetic
+%     (Latin Modern serif typography throughout, pure black body text,
+%     traditional amsthm environments, booktabs tables, sober running heads)
+%   - Restrained Clifford Seminar Group identity: crisp square logo emblem
+%     in the top masthead and a single deep oxblood accent derived from
+%     assets/logo.jpg used sparingly for hairlines, series header, and links.
+%
+% Usage:
+%   \usepackage[thesenpapier]{../../templates/clifford-seminar}
+%   \usepackage[sitzungsprotokoll]{../../templates/clifford-seminar}
+%   Optional: nobib (disables biblatex loading)
+% =============================================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{clifford-seminar}[2026/11/24 v2.0 Clifford Seminar Group Academic Style]
+
+% -----------------------------------------------------------------------------
+% 1. Package Options
+% -----------------------------------------------------------------------------
+\newif\ifcsg@protocol
+\csg@protocolfalse
+
+\newif\ifcsg@bib
+\csg@bibtrue
+
+\DeclareOption{thesenpapier}{\csg@protocolfalse}
+\DeclareOption{sitzungsprotokoll}{\csg@protocoltrue}
+\DeclareOption{bib}{\csg@bibtrue}
+\DeclareOption{nobib}{\csg@bibfalse}
+\ProcessOptions\relax
+
+% -----------------------------------------------------------------------------
+% 2. Encoding, Language, and Standard Academic Typography (Latin Modern)
+% -----------------------------------------------------------------------------
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[english]{babel}
+\RequirePackage{csquotes}
+\RequirePackage{etoolbox}
+
+\RequirePackage{lmodern}
+\RequirePackage{amsmath,amssymb,amsthm}
+\RequirePackage{microtype}
+
+\linespread{1.05}
+
+% -----------------------------------------------------------------------------
+% 3. Page Geometry & Paragraph Rhythm
+%    Classic Springer academic proportions on A4 paper.
+% -----------------------------------------------------------------------------
+\RequirePackage[
+  a4paper,
+  top=2.6cm,
+  bottom=2.6cm,
+  left=2.6cm,
+  right=2.6cm,
+  headheight=15pt,
+  headsep=16pt,
+  footskip=28pt
+]{geometry}
+
+\ifcsg@protocol
+  \setlength{\parindent}{0pt}
+  \setlength{\parskip}{0.45em}
+\else
+  \setlength{\parindent}{1.35em}
+  \setlength{\parskip}{0pt}
+\fi
+
+% -----------------------------------------------------------------------------
+% 4. Restrained Brand Palette (Derived from assets/logo.jpg)
+%    Pure black body text; deep oxblood accent used strictly for structural
+%    hairlines, masthead identity, and calm academic links.
+% -----------------------------------------------------------------------------
+\RequirePackage[table]{xcolor}
+
+\definecolor{cliffordred}{HTML}{7D1128}    % Deep print oxblood (from logo #AD1231/#771022)
+\definecolor{cliffordlink}{HTML}{5E0D1E}   % Muted burgundy for citations & cross-refs
+\definecolor{cliffordmuted}{HTML}{4D4D4D}  % Neutral dark gray for running heads & metadata
+\definecolor{cliffordrule}{HTML}{B8B0B2}   % Subtle warm-gray secondary hairline
+
+% -----------------------------------------------------------------------------
+% 5. Core Packages: Graphics, Tables, Lists, Headers, Headings, Captions
+% -----------------------------------------------------------------------------
+\RequirePackage{graphicx}
+\RequirePackage{booktabs}
+\RequirePackage{tabularx}
+\RequirePackage{array}
+\RequirePackage{enumitem}
+\RequirePackage{fancyhdr}
+\RequirePackage{titlesec}
+\RequirePackage{caption}
+\RequirePackage{mdframed}
+
+% Classic Springer caption style (bold serif label, period separator)
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  textfont=rm,
+  labelsep=period,
+  skip=6pt
+}
+\captionsetup[table]{position=top}
+\captionsetup[figure]{position=bottom}
+
+% Standard academic list styling (no colored bullets or web badges)
+\ifcsg@protocol
+  \setlist[itemize]{leftmargin=1.6em, itemsep=0.2em, topsep=0.3em, parsep=0pt}
+  \setlist[enumerate]{leftmargin=1.9em, itemsep=0.2em, topsep=0.3em, parsep=0pt}
+\else
+  \setlist[itemize]{leftmargin=1.7em, itemsep=0.25em, topsep=0.4em}
+  \setlist[enumerate]{leftmargin=2.0em, itemsep=0.3em, topsep=0.4em}
+\fi
+\setlist[enumerate,2]{label=(\alph*), itemsep=0.15em, topsep=0.2em}
+\setlist[description]{style=unboxed, font=\bfseries, itemsep=0.35em, topsep=0.45em}
+
+% -----------------------------------------------------------------------------
+% 6. Bibliography (biblatex + biber, Springer numeric-comp style)
+% -----------------------------------------------------------------------------
+\ifcsg@bib
+  \RequirePackage[
+    backend=biber,
+    style=numeric-comp,
+    sorting=none,
+    giveninits=true,
+    maxbibnames=6,
+    isbn=false,
+    url=true,
+    doi=true
+  ]{biblatex}
+  \renewcommand*{\bibfont}{\small}
+  \setlength{\bibitemsep}{0.3\baselineskip}
+  \IfFileExists{../../../bibliography/clifford-seminar-group.bib}{%
+    \addbibresource{../../../bibliography/clifford-seminar-group.bib}%
+  }{%
+    \IfFileExists{../../bibliography/clifford-seminar-group.bib}{%
+      \addbibresource{../../bibliography/clifford-seminar-group.bib}%
+    }{}%
+  }
+\fi
+
+% -----------------------------------------------------------------------------
+% 7. Hyperlinks & Cross-References (Subtle Muted Burgundy)
+% -----------------------------------------------------------------------------
+\RequirePackage[
+  colorlinks=true,
+  linkcolor=cliffordlink,
+  citecolor=cliffordlink,
+  urlcolor=cliffordlink,
+  bookmarksopen=true
+]{hyperref}
+\RequirePackage[capitalize,noabbrev]{cleveref}
+
+% -----------------------------------------------------------------------------
+% 8. Classic Springer Academic Section Headings (All Serif, Black Ink)
+% -----------------------------------------------------------------------------
+\titleformat{\section}
+  {\normalfont\large\bfseries}
+  {\thesection}
+  {0.85em}
+  {}
+
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries}
+  {\thesubsection}
+  {0.75em}
+  {}
+
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\itshape}
+  {\thesubsubsection}
+  {0.65em}
+  {}
+
+\titleformat{\paragraph}[runin]
+  {\normalfont\normalsize\bfseries}
+  {}
+  {0pt}
+  {}
+
+\ifcsg@protocol
+  \titlespacing*{\section}{0pt}{1.45em plus 0.3em minus 0.15em}{0.45em}
+  \titlespacing*{\subsection}{0pt}{1.1em plus 0.2em minus 0.1em}{0.3em}
+  \titlespacing*{\subsubsection}{0pt}{0.9em plus 0.2em minus 0.1em}{0.2em}
+  \titlespacing*{\paragraph}{0pt}{0.6em}{0.6em}
+\else
+  \titlespacing*{\section}{0pt}{1.75em plus 0.35em minus 0.2em}{0.6em}
+  \titlespacing*{\subsection}{0pt}{1.3em plus 0.25em minus 0.15em}{0.4em}
+  \titlespacing*{\subsubsection}{0pt}{1.0em plus 0.2em minus 0.1em}{0.25em}
+  \titlespacing*{\paragraph}{0pt}{0.8em}{0.65em}
+\fi
+
+% -----------------------------------------------------------------------------
+% 9. Document Metadata Interface
+% -----------------------------------------------------------------------------
+\newcommand{\csg@title}{Document Title}
+\newcommand{\csg@shorttitle}{}
+\newcommand{\csg@subtitle}{}
+\newcommand{\csg@session}{}
+\newcommand{\csg@module}{}
+\newcommand{\csg@date}{\today}
+\newcommand{\csg@institution}{Universidad Distrital Francisco Jos\'e de Caldas}
+\newcommand{\csg@series}{Clifford Seminar Group}
+\newcommand{\csg@doctype}{\ifcsg@protocol Sitzungsprotokoll\else Thesenpapier\fi}
+\newcommand{\csg@logopath}{}
+
+% Thesenpapier roles
+\newcommand{\csg@authors}{}
+\newcommand{\csg@referat}{}
+\newcommand{\csg@korreferat}{}
+
+% Sitzungsprotokoll roles
+\newcommand{\csg@topicref}{}
+\newcommand{\csg@scribe}{}
+\newcommand{\csg@present}{}
+\newcommand{\csg@online}{}
+
+% Public setters
+\newcommand{\seminartitle}[2][]{%
+  \renewcommand{\csg@title}{#2}%
+  \if\relax\detokenize{#1}\relax
+    \renewcommand{\csg@shorttitle}{#2}%
+  \else
+    \renewcommand{\csg@shorttitle}{#1}%
+  \fi
+}
+\newcommand{\seminarsubtitle}[1]{\renewcommand{\csg@subtitle}{#1}}
+\newcommand{\seminarsession}[1]{\renewcommand{\csg@session}{#1}}
+\newcommand{\seminarmodule}[1]{\renewcommand{\csg@module}{#1}}
+\newcommand{\seminardate}[1]{\renewcommand{\csg@date}{#1}}
+\newcommand{\seminarinstitution}[1]{\renewcommand{\csg@institution}{#1}}
+\newcommand{\seminarseries}[1]{\renewcommand{\csg@series}{#1}}
+\newcommand{\seminarlogo}[1]{\renewcommand{\csg@logopath}{#1}}
+
+\newcommand{\seminarauthors}[1]{\renewcommand{\csg@authors}{#1}}
+\newcommand{\seminarreferat}[1]{\renewcommand{\csg@referat}{#1}}
+\newcommand{\seminarkorreferat}[1]{\renewcommand{\csg@korreferat}{#1}}
+
+\newcommand{\seminartopicref}[1]{\renewcommand{\csg@topicref}{#1}}
+\newcommand{\seminarscribe}[1]{\renewcommand{\csg@scribe}{#1}}
+\newcommand{\seminarpresent}[1]{\renewcommand{\csg@present}{#1}}
+\newcommand{\seminaronline}[1]{\renewcommand{\csg@online}{#1}}
+
+% Auto-locate assets/logo.jpg across standard repository depths
+\newcommand{\csg@resolvelogo}{%
+  \ifdefempty{\csg@logopath}{%
+    \IfFileExists{../../../assets/logo.jpg}{\def\csg@logopath{../../../assets/logo.jpg}}{%
+      \IfFileExists{../../assets/logo.jpg}{\def\csg@logopath{../../assets/logo.jpg}}{%
+        \IfFileExists{../assets/logo.jpg}{\def\csg@logopath{../assets/logo.jpg}}{%
+          \IfFileExists{assets/logo.jpg}{\def\csg@logopath{assets/logo.jpg}}{}%
+        }%
+      }%
+    }%
+  }{}%
+}
+
+% Render the seminar logo as a crisp square publisher emblem (no rounded web corners)
+\newcommand{\csg@renderlogo}[1][1.55cm]{%
+  \csg@resolvelogo
+  \ifdefempty{\csg@logopath}{}{%
+    {\setlength{\fboxsep}{0pt}%
+     \setlength{\fboxrule}{0.4pt}%
+     \fcolorbox{cliffordrule}{white}{%
+       \includegraphics[width=#1, height=#1, keepaspectratio]{\csg@logopath}%
+     }}%
+  }%
+}
+
+% -----------------------------------------------------------------------------
+% 10. Running Headers & Footers (Classic Springer Journal / Monograph Style)
+% -----------------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[L]{%
+  \footnotesize\color{cliffordmuted}%
+  \textsc{\csg@series}\;---\;\csg@doctype%
+  \ifdefempty{\csg@session}{}{, \csg@session}%
+}
+\fancyhead[R]{%
+  \footnotesize\itshape\color{cliffordmuted}\csg@shorttitle
+}
+\renewcommand{\headrule}{%
+  \vspace{2pt}%
+  {\color{cliffordrule}\hrule height 0.4pt}%
+}
+
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\footrulewidth}{0pt}
+
+% Page 1: clean academic footer with centered page number only
+\fancypagestyle{firstpage}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\headrule}{}%
+  \fancyfoot[C]{\small\thepage}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+
+% -----------------------------------------------------------------------------
+% 11. Springer-Style Academic Masthead & Title Block (\makeseminarheader)
+% -----------------------------------------------------------------------------
+\newcommand{\makeseminarheader}{%
+  \thispagestyle{firstpage}%
+  \hypersetup{
+    pdftitle={\csg@doctype: \csg@shorttitle},
+    pdfauthor={\csg@series}
+  }%
+  \vspace*{-0.8cm}%
+  % Top journal/series masthead strip with crisp square logo emblem
+  \noindent
+  \begin{minipage}[b]{0.82\textwidth}
+    \raggedright
+    {\small\textsc{\textcolor{cliffordred}{\csg@series}}%
+     \;\textcolor{cliffordmuted}{\textperiodcentered}\;%
+     \textsc{\csg@doctype}%
+     \ifdefempty{\csg@session}{}{%
+       \;\textcolor{cliffordmuted}{\textperiodcentered}\;\textsc{\csg@session}%
+     }\par}%
+    \vspace{0.18em}%
+    {\footnotesize\color{cliffordmuted}%
+      \csg@institution%
+      \ifdefempty{\csg@module}{}{\;---\;\csg@module}%
+      \ifdefempty{\csg@date}{}{\;---\;\csg@date}%
+    \par}%
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[b]{0.15\textwidth}
+    \raggedleft
+    \csg@renderlogo[1.5cm]%
+  \end{minipage}\par
+  \vspace{0.45em}%
+  % Classic double-weight print editorial rule (deep oxblood + subtle companion)
+  {\noindent\color{cliffordred}\rule{\textwidth}{0.9pt}}\par
+  \vspace{-0.85em}%
+  {\noindent\color{cliffordrule}\rule{\textwidth}{0.3pt}}\par
+  \vspace{1.15em}%
+  % Flush-left Springer academic serif title block
+  {\noindent\raggedright\LARGE\bfseries\csg@title\par}%
+  \ifdefempty{\csg@subtitle}{}{%
+    \vspace{0.3em}%
+    {\noindent\raggedright\normalsize\itshape\color{cliffordmuted}\csg@subtitle\par}%
+  }%
+  \vspace{0.7em}%
+  % Mode-specific frontmatter block
+  \ifcsg@protocol
+    \csg@protocolmetadata
+  \else
+    \csg@thesenmetadata
+  \fi
+  \vspace{0.6em}%
+}
+
+% Thesenpapier author & seminar role block (clean serif academic style)
+\newcommand{\csg@thesenmetadata}{%
+  \begingroup
+  \renewcommand{\and}{\quad\textperiodcentered\quad}%
+  \ifdefempty{\csg@authors}{}{%
+    {\noindent\normalsize\csg@authors\par}%
+    \vspace{0.3em}%
+  }%
+  \footnotesize\color{cliffordmuted}%
+  \ifdefempty{\csg@referat}{}{%
+    \noindent\textit{Referat (Lead Exposition):}\;\textcolor{black}{\csg@referat}%
+    \ifdefempty{\csg@korreferat}{\par}{\qquad}%
+  }%
+  \ifdefempty{\csg@korreferat}{}{%
+    \textit{Korreferat (Respondent):}\;\textcolor{black}{\csg@korreferat}\par
+  }%
+  \endgroup
+}
+
+% Sitzungsprotokoll archival metadata table (pure white, crisp rules, zero web boxes)
+\newcommand{\csg@protocolmetadata}{%
+  \begingroup
+  \setlength{\parskip}{0pt}%
+  \small
+  \renewcommand{\arraystretch}{1.18}%
+  \noindent
+  \begin{tabularx}{\textwidth}{@{} >{\itshape\color{cliffordmuted}}l >{\raggedright\arraybackslash}X @{}}
+    \arrayrulecolor{cliffordrule}\midrule
+    \ifdefempty{\csg@topicref}{}{%
+      Topic: & \csg@topicref \\
+    }%
+    \ifdefempty{\csg@referat}{}{%
+      At the board (Referat): & \csg@referat
+        \ifdefempty{\csg@korreferat}{}{%
+          \qquad\textit{\textcolor{cliffordmuted}{Korreferat:}}\;\csg@korreferat
+        } \\
+    }%
+    \ifdefempty{\csg@scribe}{}{%
+      Protocol (Scribe): & \csg@scribe \\
+    }%
+    \ifdefempty{\csg@present}{}{%
+      Present (In-person): & \csg@present \\
+    }%
+    \ifdefempty{\csg@online}{}{%
+      Present (Online): & \csg@online \\
+    }%
+    \arrayrulecolor{cliffordrule}\midrule
+  \end{tabularx}%
+  \arrayrulecolor{black}%
+  \endgroup
+  \par
+}
+
+% -----------------------------------------------------------------------------
+% 12. Classic Springer Mathematical Environments (amsthm, All Serif)
+% -----------------------------------------------------------------------------
+\newtheoremstyle{springer-plain}
+  {0.85em}  % Space above
+  {0.85em}  % Space below
+  {\itshape} % Body font
+  {0pt}      % Indent
+  {\bfseries} % Head font
+  {.}        % Punctuation after head
+  {0.55em}   % Space after head
+  {\thmname{#1}\thmnumber{ #2}\thmnote{\;\normalfont(#3)}}
+
+\newtheoremstyle{springer-definition}
+  {0.85em}
+  {0.85em}
+  {\normalfont}
+  {0pt}
+  {\bfseries}
+  {.}
+  {0.55em}
+  {\thmname{#1}\thmnumber{ #2}\thmnote{\;\normalfont(#3)}}
+
+\newtheoremstyle{springer-remark}
+  {0.65em}
+  {0.65em}
+  {\normalfont}
+  {0pt}
+  {\itshape}
+  {.}
+  {0.5em}
+  {\thmname{#1}\thmnumber{ #2}\thmnote{\;(#3)}}
+
+\theoremstyle{springer-plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{springer-definition}
+\newtheorem{definition}{Definition}
+\newtheorem{axiom}{Axiom}
+
+\theoremstyle{springer-remark}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+
+\renewcommand{\qedsymbol}{$\square$}
+
+% -----------------------------------------------------------------------------
+% 13. Clean Print-Academic Structural Environments (No Webpage Cards)
+% -----------------------------------------------------------------------------
+% Springer-style Abstract / Scope block: crisp thin top/bottom hairlines, pure white
+\newenvironment{seminarabstract}[1][Abstract]{%
+  \par\vspace{0.35em}%
+  \noindent{\color{cliffordrule}\rule{\textwidth}{0.4pt}}\par
+  \vspace{0.45em}%
+  \begingroup\small\noindent\textbf{\textcolor{cliffordred}{#1.}}\hspace{0.5em}\ignorespaces
+}{%
+  \par\endgroup
+  \vspace{0.35em}%
+  \noindent{\color{cliffordrule}\rule{\textwidth}{0.4pt}}\par
+  \vspace{0.65em}%
+}
+
+% Highlighted Algebraic Identity / Key Result (classic academic hairline frame)
+\newenvironment{keyresult}[1][]{%
+  \par\vspace{0.6em}%
+  \begin{mdframed}[
+    linewidth=0.5pt,
+    linecolor=cliffordrule,
+    topline=true,
+    bottomline=true,
+    leftline=false,
+    rightline=false,
+    backgroundcolor=white,
+    innerleftmargin=0pt,
+    innerrightmargin=0pt,
+    innertopmargin=6pt,
+    innerbottommargin=6pt,
+    skipabove=0pt,
+    skipbelow=0pt,
+    nobreak=true
+  ]%
+  \if\relax\detokenize{#1}\relax
+    \noindent\ignorespaces
+  \else
+    \noindent\textbf{\small\textcolor{cliffordred}{#1.}}\par\vspace{0.25em}%
+    \noindent\ignorespaces
+  \fi
+}{%
+  \end{mdframed}%
+  \vspace{0.6em}%
+}
+
+% Plenary Discussion Thesis (classic scholarly numbered statement, unboxed)
+\newcounter{seminarthesis}
+\renewcommand{\theseminarthesis}{\Roman{seminarthesis}}
+
+\newenvironment{thesis}[1][]{%
+  \refstepcounter{seminarthesis}%
+  \par\vspace{0.55em}%
+  \noindent\textbf{\textcolor{cliffordred}{Thesis~\theseminarthesis}}%
+  \if\relax\detokenize{#1}\relax\else
+    \;\textbf{(#1)}%
+  \fi
+  \textbf{.}\hspace{0.5em}\ignorespaces
+}{%
+  \par\vspace{0.2em}%
+}
+
+% Blackboard Clarification / Plenary Note (traditional scholarly indented scholium)
+\newenvironment{discussionnote}[1][Plenary Discussion]{%
+  \par\vspace{0.45em}%
+  \begin{mdframed}[
+    linewidth=0.8pt,
+    linecolor=cliffordrule,
+    topline=false,
+    bottomline=false,
+    leftline=true,
+    rightline=false,
+    backgroundcolor=white,
+    leftmargin=0.6em,
+    innerleftmargin=0.9em,
+    innerrightmargin=0pt,
+    innertopmargin=2pt,
+    innerbottommargin=2pt,
+    skipabove=0pt,
+    skipbelow=0pt,
+    nobreak=true
+  ]%
+  \small\noindent\textit{#1.}\hspace{0.5em}\ignorespaces
+}{%
+  \end{mdframed}%
+  \vspace{0.45em}%
+}
+
+% Resolved Conclusions (Sitzungsprotokoll: clean typographic sectioning)
+\newenvironment{takeaways}[1][Resolved Conclusions]{%
+  \par\vspace{0.55em}%
+  \noindent\textbf{\textcolor{cliffordred}{#1.}}\par
+  \vspace{0.2em}%
+}{%
+  \par\vspace{0.35em}%
+}
+
+% Open Questions & Next Session (Sitzungsprotokoll: crisp hairline-bounded summary)
+\newenvironment{nextsession}[1][Open Questions and Next Session]{%
+  \par\vspace{0.55em}%
+  \begin{mdframed}[
+    linewidth=0.5pt,
+    linecolor=cliffordred,
+    topline=true,
+    bottomline=true,
+    leftline=false,
+    rightline=false,
+    backgroundcolor=white,
+    innerleftmargin=0pt,
+    innerrightmargin=0pt,
+    innertopmargin=6pt,
+    innerbottommargin=6pt,
+    skipabove=0pt,
+    skipbelow=0pt,
+    nobreak=true
+  ]%
+  \noindent\textbf{\textcolor{cliffordred}{#1.}}\par\vspace{0.2em}%
+}{%
+  \end{mdframed}%
+  \vspace{0.5em}%
+}
+
+% -----------------------------------------------------------------------------
+% 14. Shared Mathematical Macros for Clifford Algebra & Linear Spaces
+% -----------------------------------------------------------------------------
+\providecommand{\Cl}{\mathcal{C}\ell}
+\providecommand{\R}{\mathbb{R}}
+\providecommand{\C}{\mathbb{C}}
+\providecommand{\Q}{\mathbb{Q}}
+\providecommand{\Z}{\mathbb{Z}}
+\providecommand{\N}{\mathbb{N}}
+\providecommand{\K}{\mathbb{K}}
+
+\providecommand{\ev}{\operatorname{ev}}
+\providecommand{\rad}{\operatorname{rad}}
+\providecommand{\Hom}{\operatorname{Hom}}
+\providecommand{\End}{\operatorname{End}}
+\providecommand{\id}{\operatorname{id}}
+\providecommand{\tr}{\operatorname{tr}}
+\providecommand{\Span}{\operatorname{span}}
+\providecommand{\Spin}{\mathrm{Spin}}
+\providecommand{\Pin}{\mathrm{Pin}}
+\providecommand{\SO}{\mathrm{SO}}
+\providecommand{\SU}{\mathrm{SU}}
+
+\providecommand{\pair}[2]{\langle #1, #2 \rangle}
+\providecommand{\grade}[2]{\langle #1 \rangle_{#2}}
+\providecommand{\rev}[1]{\widetilde{#1}}
+\providecommand{\ginv}[1]{\widehat{#1}}
+\providecommand{\clconj}[1]{\overline{#1}}
+\providecommand{\dd}{\mathrm{d}}
+
+\endinput
