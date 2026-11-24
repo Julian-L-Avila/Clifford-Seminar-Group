@@ -15,11 +15,18 @@
 \usepackage[backend=biber,style=numeric-comp,sorting=none]{biblatex}
 \addbibresource{../../bibliography/clifford-seminar-group.bib}
 
-\usepackage[colorlinks=true]{hyperref}
+\usepackage[
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black
+]{hyperref}
 \usepackage{cleveref}
 
 \newcommand{\Cl}{\mathcal{C}\ell}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\lc}{\mathbin{\rfloor}}
+\newcommand{\rc}{\mathbin{\lfloor}}
 
 \title{\LARGE\bfseries Clifford Algebras in Theoretical Physics\\[0.5em]
 \large Seminar Methodology, Modular Syllabus, and Thematic Progression}
@@ -171,8 +178,12 @@ Topic & Subject & Mathematical and Physical Content & Literature \\
   & Ideal $\mathcal{I}_q=\langle v\otimes v-q(v)1\rangle$, quotient algebra
     $\Cl(V,q)$, universal property, $\mathbb{Z}_2$-grading, grade involution
     $\hat{u}$, reversion $\tilde{u}$, Clifford conjugation $\bar{u}$,
-    geometric product $uv=u\cdot v+u\wedge v$.
-  & \\[3pt]
+    geometric product $uv=u\lc v+u\wedge v$, left/right contractions $\lc,\rc$.
+  & VR \cite[Secs.~3.1--3.3]{vazIntroductionCliffordAlgebras2016};
+    Axler \cite[Sec.~3.E]{axlerLinearAlgebraDone2015};
+    Garling \cite[Secs.~5.1--5.3, 5.6]{garlingCliffordAlgebrasIntroduction2011};
+    Lounesto \cite[Chaps.~1--3]{lounestoCliffordAlgebrasSpinors2001};
+    DL \cite[Chaps.~1--2]{doranGeometricAlgebraPhysicists2013}. \\[3pt]
 3 & Multivector structures, Lie algebras, and Spin groups
   & Module isomorphism $\Cl(V,q)\cong\bigwedge V$, blade projections,
     bivector Lie algebra $\Cl^2(V,q)\cong\mathfrak{so}(p,q)$, Clifford and
@@ -295,13 +306,13 @@ respondents are compiled in \cref{tab:tandems}.
 \caption{Register of seminar leaders, tandems, and respondents across topics.}
 \label{tab:tandems}
 \renewcommand{\arraystretch}{1.15}
-\begin{tabular}{@{}cp{4.6cm}p{3.3cm}p{3.3cm}p{2.6cm}@{}}
+\begin{tabular}{@{}cp{4.1cm}p{3.8cm}p{3.1cm}p{2.4cm}@{}}
 \toprule
 Topic & Subject & Senior / Lead & Junior & Respondent \\
 \midrule
-1  & Dual spaces and quadratic forms   & J.~L. Avila-Martinez & --- & \\[2pt]
-2  & Universal Clifford construction  & J.~L. Avila-Martinez &
-     C.~Martinez & \\[2pt]
+1  & Dual spaces and quadratic forms   & Julian L. Avila-Martinez & --- & \\[2pt]
+2  & Universal Clifford construction  & Julian L. Avila-Martinez &
+     Cristian Martinez & \\[2pt]
 3  & Multivector structures and Spin  & & & \\[2pt]
 4  & Clifford analysis and monogenics & & & \\[2pt]
 5  & Central forces and bivectors     & & & \\[2pt]

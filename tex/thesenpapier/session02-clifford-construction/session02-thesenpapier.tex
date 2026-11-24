@@ -1,0 +1,352 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[thesenpapier]{../../templates/clifford-seminar}
+\usepackage{tikz-cd}
+
+% -----------------------------------------------------------------------------
+% Document Metadata
+% -----------------------------------------------------------------------------
+\seminartitle[Universal Clifford Construction and Involutions]{%
+  Universal Clifford Construction, Geometric Product, and Involutions%
+}
+\seminarsubtitle{Topic~2 --- Part~A: Foundations and Geometric Analysis}
+\seminarsession{Session 02}
+\seminarmodule{Part A: Foundations and Geometric Analysis}
+\seminardate{November 2026}
+\seminarinstitution{Universidad Distrital Francisco Jos\'e de Caldas}
+
+\seminarauthors{Julian L. Avila-Martinez \and Cristian Martinez}
+\seminarreferat{Julian L. Avila-Martinez \& Cristian Martinez}
+
+\begin{document}
+
+\makeseminarheader
+
+\begin{seminarabstract}[Conceptual Scope]
+  Session~01 showed that a real linear space $V$ needs a quadratic form
+  $q : V \to \R$ for measurement, while its tensor algebra $T(V)$ carries
+  unconstrained multilinear excess.
+  In this single-session meeting we quotient $T(V)$ by
+  $\mathcal{I}_q = \langle v \otimes v - q(v)1 \rangle$ to build the universal
+  Clifford algebra $\Cl(V,q)$, unpack $uv = u \lc v + u \wedge v$ via
+  $\Cl_{1,0}$ and $\Cl_{0,1}$, derive the $\Z_2$-grading and three canonical
+  involutions from universality, and use involution parity to induce quadratic
+  norms---anchored throughout in planar Kepler kinematics.
+\end{seminarabstract}
+
+% =============================================================================
+\section{Motivation: Factoring Measurement into Keplerian Multiplication}
+\label{sec:motivation}
+% =============================================================================
+
+In a real quadratic space $(V, q)$ with polarized symmetric bilinear form
+$b(u, v) = \tfrac{1}{2}\bigl(q(u + v) - q(u) - q(v)\bigr)$, the free tensor
+algebra $T(V) = \bigoplus_{r=0}^{\infty} T^r(V)$ lets us form $r \otimes p$
+from the position $r$ and momentum $p$ of a Keplerian particle, yet remains
+blind to $q$: $r \otimes r$ does not reduce to the squared radius $q(r) =
+|r|^2$, and $r \otimes p$ encodes neither radial contraction $r \lc p$ nor the
+oriented orbital plane $L = r \wedge p$
+\cite{hestenesNewFoundationsClassical2002,doranGeometricAlgebraPhysicists2013}.
+Internalizing $q$ into an associative product means enforcing $v^2 = q(v) 1$
+for all $v \in V$---algebraically, taking the quotient of $T(V)$ by the
+smallest two-sided ideal containing every measurement defect
+$v \otimes v - q(v)1$ \cite{vazIntroductionCliffordAlgebras2016,
+garlingCliffordAlgebrasIntroduction2011}.
+
+% =============================================================================
+\section{Foundational Definitions and Core Results}
+\label{sec:definitions}
+% =============================================================================
+
+Throughout, $(V, q)$ is an $n$-dimensional real quadratic space with symmetric
+bilinear form $b$, and $T(V) = \bigoplus_{r=0}^{\infty} T^r(V)$ is its unital
+tensor algebra ($1 \in T^0(V) = \R$).
+
+\subsection{Ideals, Quotient Algebra, and the Universal Property}
+\label{subsec:quotient-universal}
+
+\begin{definition}[Two-Sided Ideal and Universal Clifford Algebra]
+  \label{def:clifford-algebra}
+  A subspace $\mathcal{I} \subseteq A$ of an associative unital $\R$-algebra
+  $A$ is a \emph{two-sided ideal} if $ax, xa \in \mathcal{I}$ for all
+  $a \in A$, $x \in \mathcal{I}$; the quotient space $A/\mathcal{I}$
+  \cite[Sec.~3.E]{axlerLinearAlgebraDone2015} then
+  inherits a well-defined associative unital multiplication $[a][b] := [ab]$
+  and canonical surjection $\pi : A \to A/\mathcal{I}$ with $\ker\pi =
+  \mathcal{I}$.
+  Setting
+  \begin{equation}
+    \label{eq:clifford-ideal}
+    \mathcal{I}_q := \left\langle v \otimes v - q(v) 1 \;\middle|\; v \in V
+    \right\rangle \subset T(V), \qquad
+    \Cl(V, q) := T(V) / \mathcal{I}_q,
+  \end{equation}
+  defines the \emph{universal Clifford algebra} of $(V, q)$, equipped with the
+  canonical Clifford map $\iota := \pi \circ j : V \hookrightarrow T(V) \to
+  \Cl(V, q)$.
+  Identifying $V$ with its injective image $\iota(V)$ and writing the quotient
+  product by juxtaposition yields $v^2 = q(v) 1$ for all $v \in V$.
+\end{definition}
+
+A linear map $\gamma : V \to A$ into an associative unital $\R$-algebra $A$ is
+a \emph{Clifford map} if $\gamma(v)^2 = q(v)1_A$ for all $v \in V$
+(equivalently, $\gamma(u)\gamma(v) + \gamma(v)\gamma(u) = 2b(u, v)1_A$).
+
+\begin{theorem}[Universal Property of $\Cl(V, q)$]
+  \label{thm:universal-property}
+  For every associative unital $\R$-algebra $A$ and every Clifford map
+  $\gamma : V \to A$, there exists a unique unital algebra homomorphism
+  $\Phi : \Cl(V, q) \to A$ such that $\Phi \circ \iota = \gamma$:
+  \begin{equation}
+    \label{eq:universal-diagram}
+    \begin{tikzcd}[column sep=large, row sep=small]
+      V \arrow[r, "\iota"] \arrow[dr, "\gamma"'] & \Cl(V, q) \arrow[d,
+        dashed, "\exists!\,\Phi"] \\
+      & A
+    \end{tikzcd}
+  \end{equation}
+  Hence $\Cl(V, q)$ is unique up to a unique isomorphism and has dimension
+  $\dim \Cl(V, q) = 2^n$
+  \cite[Secs.~3.1--3.2]{vazIntroductionCliffordAlgebras2016}.
+\end{theorem}
+
+\subsection{The Geometric Product and One-Dimensional Signatures}
+\label{subsec:geom-product}
+
+\begin{proposition}[Polarization and Vector Invertibility]
+  \label{prop:polarization}
+  Any $u, v \in V \subset \Cl(V, q)$ satisfy $uv + vu = 2b(u, v) 1$.
+  In particular, $u \perp_b v \iff uv = -vu$, and every non-isotropic vector
+  $v \in V$ ($q(v) \neq 0$) admits the unique two-sided inverse
+  $v^{-1} = v / q(v)$.
+\end{proposition}
+
+\begin{keyresult}[Decomposition of the Geometric Product]
+  For all $u, v \in V \subset \Cl(V, q)$, the associative geometric product
+  splits uniquely into its symmetric contraction and antisymmetric exterior
+  parts:
+  \begin{equation}
+    \label{eq:geometric-product}
+    uv = u \lc v + u \wedge v, \qquad
+    u \lc v = u \rc v := \frac{1}{2}(uv + vu) = b(u, v) 1, \quad
+    u \wedge v := \frac{1}{2}(uv - vu),
+  \end{equation}
+  where $\lc$ and $\rc$ denote the \emph{left} and \emph{right contractions}
+  (coinciding on $1$-vectors and generalizing to $A_r \lc B_s =
+  \grade{A_r B_s}{s-r}$ and $A_r \rc B_s = \grade{A_r B_s}{r-s}$).
+  In the Kepler plane, $rp = r \lc p + L$ unifies radial contraction
+  ($r \lc p$) and the orbital angular momentum bivector ($L = r \wedge p$),
+  while vector inversion yields $r^{-1} = r / r^2$ in
+  $\dot{p} = -k\, r^{-1}/|r|$.
+\end{keyresult}
+
+Already in dimension $n = 1$, signature flips the algebraic type completely:
+$\Cl_{1,0} = \Cl(\R^{1,0})$ ($e_1^2 = +1$) versus $\Cl_{0,1} = \Cl(\R^{0,1})$
+($e_1^2 = -1$), compared in \cref{tab:low-dim}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{One-dimensional real Clifford algebras $\Cl_{1,0}$ and $\Cl_{0,1}$
+    for $u = a + b e_1$ ($a, b \in \R$).}
+  \label{tab:low-dim}
+  \small
+  \renewcommand{\arraystretch}{1.16}
+  \begin{tabularx}{\textwidth}{@{} >{\bfseries}l l l >{\raggedright\arraybackslash}X @{}}
+    \toprule
+    \textbf{Algebra} & \textbf{Square} & \textbf{Isomorphism} &
+      \textbf{Structure \& Geometric Role} \\
+    \midrule
+    $\Cl_{1,0}$ & $e_1^2 = +1$ &
+      $\R[x]/\langle x^2 - 1\rangle \cong \R \oplus \R$ &
+      Split-complex (hyperbolic) numbers; non-simple with idempotents
+      $P_\pm = \tfrac{1}{2}(1 \pm e_1)$ ($P_+ P_- = 0$, zero divisors) and
+      $u\clconj{u} = a^2 - b^2$. \\
+    $\Cl_{0,1}$ & $e_1^2 = -1$ &
+      $\R[x]/\langle x^2 + 1\rangle \cong \C$ &
+      Complex field (simple division algebra); $e_1$ acts as $i$ and models the
+      even rotation subalgebra $\Cl^+_{2,0} \cong \C$ of planar Kepler orbits
+      ($e^{\theta \hat{B}}$). \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\subsection{\texorpdfstring{$\Z_2$}{Z2}-Grading, Involutions, and Parity-Induced Norms}
+\label{subsec:grading-involutions-norm}
+
+Because $v^2 = q(v) 1$ mixes tensor degrees $2$ and $0$, $\Cl(V, q)$ retains
+only a $\Z_2$-grading as an algebra.
+All three canonical involutions follow coordinate-freely from
+\cref{thm:universal-property}
+\cite[Sec.~5.3]{garlingCliffordAlgebrasIntroduction2011}:
+(i)~\textbf{grade involution} $\ginv{\cdot}$, the unique automorphism extending
+$v \mapsto -v$;
+(ii)~\textbf{reversion} $\rev{\cdot}$, the unique anti-automorphism
+($\rev{AB} = \rev{B}\rev{A}$) induced by $v \mapsto v$ into the opposite
+algebra $\Cl(V,q)^{\mathrm{opp}}$; and
+(iii)~\textbf{Clifford conjugation} $\clconj{A} := \ginv{\rev{A}} =
+\rev{\ginv{A}}$.
+The $\pm 1$ eigenspaces $\Cl^\pm(V, q) := \{ A \mid \ginv{A} = \pm A \}$ yield
+the superalgebra decomposition $\Cl(V, q) = \Cl^+ \oplus \Cl^-$ with
+\begin{equation}
+  \label{eq:z2-grading}
+  \Cl^\pm \Cl^\pm \subseteq \Cl^+, \qquad
+  \Cl^\pm \Cl^\mp \subseteq \Cl^-.
+\end{equation}
+Thus $\Cl^+(V, q)$ is a closed subalgebra (containing scalars, bivectors such
+as $L$, and rotors), while vectors ($r, p$) lie in $\Cl^-(V, q)$.
+Their action on a homogeneous $k$-blade $A_k \in \Cl^k(V, q) \cong
+\bigwedge^k V$ is periodic modulo~$4$ (\cref{tab:involutions}).
+
+\begin{table}[htbp]
+  \centering
+  \caption{Canonical involutions on a $k$-blade $A_k \in \Cl^k(V, q)$
+    (periodic modulo~$4$).}
+  \label{tab:involutions}
+  \small
+  \renewcommand{\arraystretch}{1.15}
+  \begin{tabularx}{\textwidth}{@{} >{\bfseries}l c c c c c c >{\raggedright\arraybackslash}X @{}}
+    \toprule
+    \textbf{Involution} & \textbf{Map} & \textbf{Factor} &
+      $k{=}0$ & $k{=}1$ & $k{=}2$ & $k{=}3$ & \textbf{Algebraic Character} \\
+    \midrule
+    Grade involution & $\ginv{A}_k$ & $(-1)^k$ & $+$ & $-$ & $+$ & $-$ &
+      Automorphism ($\Z_2$-parity) \\
+    Reversion & $\rev{A}_k$ & $(-1)^{k(k-1)/2}$ & $+$ & $+$ & $-$ & $-$ &
+      Anti-automorphism (order swap) \\
+    Clifford conjugation & $\clconj{A}_k$ & $(-1)^{k(k+1)/2}$ & $+$ & $-$ & $-$ & $+$ &
+      Anti-automorphism ($\clconj{A} = \ginv{\rev{A}}$) \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\begin{keyresult}[Involution Parity and Induced Quadratic Norms]
+  Let $\grade{\cdot}{0} : \Cl(V, q) \to \R$ denote the scalar projection.
+  The two anti-automorphisms induce canonical quadratic forms on $\Cl(V, q)$
+  \cite[Sec.~3.3]{vazIntroductionCliffordAlgebras2016}:
+  \begin{equation}
+    \label{eq:involution-norms}
+    N_{\sim}(A) := \grade{A\rev{A}}{0}, \qquad
+    N_{-}(A) := \grade{A\clconj{A}}{0}, \qquad
+    N_{-}(A_k) = (-1)^k N_{\sim}(A_k),
+  \end{equation}
+  linked on every $k$-blade by the $\Z_2$-parity sign $(-1)^k$ from
+  $\clconj{A}_k = \ginv{\rev{A}}_k$.
+  Hence $N_\sim$ is positive-definite on Euclidean $\Cl_{n,0}$
+  ($e_i\rev{e}_i = +1$), while $N_-$ is positive-definite on $\Cl_{0,n}$
+  ($e_i\clconj{e}_i = -e_i^2 = +1$, recovering $|z|^2 = z\clconj{z}$ in
+  $\Cl_{0,1} \cong \C$).
+\end{keyresult}
+
+\begin{remark}[Keplerian Magnitudes]
+  In $\Cl_{2,0} \subset \Cl_{3,0}$, $r$ is odd ($k=1$), so $r\rev{r} = |r|^2 >
+  0$ and $r^{-1} = \rev{r}/(r\rev{r})$.
+  By contrast, $L = r \wedge p$ is an even bivector ($k=2$) with $L^2 =
+  -|L|^2 \le 0$; reversion supplies the minus sign yielding
+  $L\rev{L} = L\clconj{L} = -L^2 = |L|^2 = (2m\dot{\mathcal{A}})^2$, the
+  squared Keplerian areal velocity.
+\end{remark}
+
+% =============================================================================
+\section{Blackboard Derivation Agenda (40 Minutes)}
+\label{sec:agenda}
+% =============================================================================
+
+\begin{enumerate}
+  \item \textbf{Stage 1 (12 min):} Ideal $\mathcal{I}_q$, quotient
+    $\Cl(V, q) = T(V)/\mathcal{I}_q$, and proof of the universal property
+    (\cref{thm:universal-property}).
+  \item \textbf{Stage 2 (10 min):} Geometric product $uv = u \lc v +
+    u \wedge v$, contractions $\lc,\rc$, vector inverses, and $\Cl_{1,0}$,
+    $\Cl_{0,1}$.
+  \item \textbf{Stage 3 (9 min):} Coordinate-free construction of
+    $\ginv{\cdot}$, $\rev{\cdot}$, $\clconj{\cdot}$, $\Z_2$-grading, and
+    $k$-blade signs.
+  \item \textbf{Stage 4 (9 min):} Parity-induced norms $N_\sim$ vs.\ $N_-$ on
+    $\Cl_{1,0}$, $\Cl_{0,1}$, and the Kepler product $rp = r \lc p + L$.
+\end{enumerate}
+
+% =============================================================================
+\section{Theses for Plenary Discussion}
+\label{sec:theses}
+% =============================================================================
+
+\begin{thesis}[Metric Quotients Over Free Multilinearity]
+  Factoring $T(V)$ by $\mathcal{I}_q = \langle v \otimes v - q(v)1 \rangle$ is
+  the minimal algebraic act turning a linear space into a metric algebra; by
+  universality, $\C$, $\mathbb{H}$, and Pauli matrices are homomorphic shadows
+  of a single invariant structure.
+\end{thesis}
+
+\begin{thesis}[Signature Governs Divisibility and Geometry]
+  Even in dimension one, reversing the sign of $q$ transforms a division
+  algebra of rotations ($\Cl_{0,1} \cong \C$) into a non-simple ring with
+  zero divisors and idempotents ($\Cl_{1,0} \cong \R \oplus \R$); zero divisors
+  are not defects, but the algebraic signature of hyperbolic and null geometry.
+\end{thesis}
+
+\begin{thesis}[Involution Parity Selects Physical Norms]
+  Reversion and Clifford conjugation differ strictly by the $\Z_2$-parity
+  automorphism $\ginv{\cdot}$, selecting the positive-definite norm for each
+  signature ($|z|^2 = z\clconj{z}$ in $\Cl_{0,1}$; $|r|^2 = r\rev{r}$ and
+  $|L|^2 = L\rev{L}$ in $\Cl_{3,0}$) without coordinates.
+\end{thesis}
+
+% =============================================================================
+\section{Preparatory Exercises}
+\label{sec:exercises}
+% =============================================================================
+
+Attempt these three exercises and submit one written question 24~hours before
+the session.
+
+\begin{enumerate}[itemsep=0.2em, topsep=0.3em]
+  \item \textbf{One-Dimensional Quotients and Zero Divisors.}
+    Identify $T(\R) \cong \R[x]$ and construct $\Cl_{1,0} \cong
+    \R[x]/\langle x^2 - 1\rangle$ and $\Cl_{0,1} \cong
+    \R[x]/\langle x^2 + 1\rangle$.
+    In $\Cl_{1,0}$, set $P_\pm := \tfrac{1}{2}(1 \pm e_1)$ and verify
+    $P_\pm^2 = P_\pm$, $P_+ + P_- = 1$, and $P_+ P_- = 0$, proving
+    $\Cl_{1,0} \cong \R \oplus \R$.
+    Explain why $\R^{1,0}$ admits a one-dimensional non-universal Clifford
+    algebra whereas $\R^{0,1}$ does not.
+
+  \item \textbf{Coordinate-Free Grade Involution.}
+    Using only \cref{thm:universal-property} (no basis), prove that
+    $v \mapsto -\iota(v)$ extends uniquely to an involutory algebra
+    automorphism $\ginv{\cdot} : \Cl(V, q) \to \Cl(V, q)$, and deduce directly
+    that $\Cl^+(V, q) = \{ A \mid \ginv{A} = A \}$ is a subalgebra.
+
+  \item \textbf{Geometric Product and Parity-Induced Norms in Kepler Motion.}
+    \begin{enumerate}
+      \item For $r, p \in \R^{2,0} \subset \Cl_{2,0}$ with
+        $rp = r \lc p + L$ ($L = r \wedge p$), verify $\rev{L} = -L$ and
+        compute $(rp)\rev{(rp)}$ to deduce the Lagrange identity
+        $(r \lc p)^2 + |L|^2 = r^2 p^2$, where $|L|^2 := L\rev{L} = -L^2$.
+      \item For $u = a + b e_1$ ($a, b \in \R$), compute $u\rev{u}$,
+        $u\clconj{u}$, $N_\sim(u)$, and $N_-(u)$ in $\Cl_{1,0}$ and
+        $\Cl_{0,1}$, and explain why $\ginv{e}_1 = -e_1$ makes $u\clconj{u}$ a
+        scalar multiplicative norm while $u\rev{u}$ is not when $ab \neq 0$.
+    \end{enumerate}
+\end{enumerate}
+
+% =============================================================================
+\section{Preparatory Literature}
+\label{sec:literature}
+% =============================================================================
+
+\begin{itemize}[itemsep=0.15em, topsep=0.25em]
+  \item \textbf{Primary reading:} Vaz and da Rocha
+    \cite[Secs.~3.1--3.3]{vazIntroductionCliffordAlgebras2016} (quotient,
+    universality, $\Z_2$-grading, involutions, norms); Axler
+    \cite[Sec.~3.E]{axlerLinearAlgebraDone2015} (quotient linear spaces).
+  \item \textbf{Further references:} Garling
+    \cite[Secs.~5.1--5.3, 5.6]{garlingCliffordAlgebrasIntroduction2011};
+    Lounesto \cite[Chaps.~1--3]{lounestoCliffordAlgebrasSpinors2001};
+    Hestenes \cite[Chaps.~1--2, Sec.~4-1]{hestenesNewFoundationsClassical2002};
+    Doran and Lasenby \cite[Chaps.~1--2]{doranGeometricAlgebraPhysicists2013}.
+\end{itemize}
+
+{\renewcommand*{\bibfont}{\footnotesize}\setlength{\bibitemsep}{0.15\baselineskip}%
+\printbibliography[title={References}]}
+
+\end{document}
