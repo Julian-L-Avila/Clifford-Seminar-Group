@@ -1,0 +1,89 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\setlist{nosep}
+
+\newcommand{\pair}[2]{\langle #1,#2\rangle}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\Et}{\widetilde{\mathcal{E}}}
+\newcommand{\ev}{\operatorname{ev}}
+\newcommand{\id}{\operatorname{id}}
+
+\begin{document}
+
+\begin{center}
+  {\large\bfseries Sitzungsprotokoll -- 4 November 2026}\\[3pt]
+  Clifford Seminar Group, Universidad Distrital
+\end{center}
+
+\noindent\textbf{Topic:} Thesenpapier 01, Problem 3 (dual space and bidual), continued from last session.\\
+\textbf{At the board:} Julián.\quad \textbf{Protocol:} Sebastián Rodríguez.\\
+\textbf{Present:} Adriano, Camilo, David, Jaime, José, Juanes, Laura, Manu, Sebastián; online: Alexander, Nuri.
+
+\section*{Recap}
+
+We started with a short recap for those who missed last session. The elements of $V^*$ are linear maps that take a vector and give a number, so we can think of them as measuring devices. Going back to the Kepler plane, we took the transverse sensor $f_2(r,\theta)=r\cos\theta$, which measures the projection of the position onto a chosen axis. Its differential is
+\[
+  df_2=\cos\theta\,dr-r\sin\theta\,d\theta .
+\]
+(It was first written with a $+$; someone caught the sign.) We also recalled that $dr(e_r)=1$, $dr(e_\theta)=0$, and so on, i.e.\ $\pair{\omega^i}{e_j}=\delta^i_j$.
+
+\section*{Problem 3(a): is there a canonical map $V\to V^*$?}
+
+Take two bases $\E=\{e_i\}$ and $\Et=\{\tilde e_i\}$ with $\tilde e_i=T(e_i)$, and define the dual map $T^*$ by $\pair{T^*\alpha}{v}=\pair{\alpha}{Tv}$, i.e.\ $T^*\alpha=\alpha\circ T$.
+
+Julián asked what we need for $T^*$ to exist. After some back and forth, the answer was: only that $T$ be linear, because then $\alpha\circ T$ is again linear and lives in $V^*$. Invertibility is not needed here; we only ask for it because $T$ has to send a basis to a basis. (Side comment: in quantum mechanics the existence of the adjoint is more delicate; the example given was the momentum operator.)
+
+Inserting $T^{-1}T$ gives $(T^{-1})^*=(T^*)^{-1}$. Then, from $\pair{\tilde\omega^j}{T e_i}=\delta^j_i$, we get $T^*\tilde\omega^j=\omega^j$, so
+\[
+  \tilde e_i=T(e_i),\qquad \tilde\omega^i=(T^{-1})^*\omega^i .
+\]
+Julián made the point that this is the real reason behind the ``covariant vs.\ contravariant'' story: the dual basis transforms with the inverse because we impose $\pair{\tilde\omega^j}{\tilde e_i}=\delta^j_i$ in every basis, not because of some extra rule.
+
+Now let $\phi_\E\colon V\to V^*$, $\phi_\E(e_i)=\omega^i$ (and similarly $\phi_{\Et}$). From the above,
+\[
+  \phi_{\Et}=(T^*)^{-1}\circ\phi_\E\circ T^{-1},
+\]
+which always holds. (Julián's remark here: the diagram only tells you that both paths have the same start and end, not that they are equal.) The question is whether $\phi_{\Et}=\phi_\E$ for every $T$. Someone proposed $T=\id$, which works trivially but misses the point, since the claim has to hold for all $T$. If we assume it, we get $\phi_\E=T^*\circ\phi_\E\circ T$, that is,
+\[
+  b(u,v):=\pair{\phi_\E(u)}{v}\quad\text{must satisfy}\quad b(Tu,Tv)=b(u,v).
+\]
+So the two maps agree only when $T$ is an isometry of $b$. Julián stressed calling $b$ a symmetric bilinear form and not an inner product, since we never ask for positivity; later it will play the role of the metric. Rotations, reflections and translations were given as examples of isometries.\footnote{Small correction: translations are not linear maps of $V$, so only rotations and reflections count here.}
+
+\paragraph{Example (dilatation).} Take $T=\lambda\,\id$ with $\lambda\neq0$ (so it is invertible) and $\lambda\neq\pm1$ ($-1$ is a reflection, which is an isometry). Then $T^*=\lambda\,\id$ and
+\[
+  T^*\circ\phi_\E\circ T=\lambda^2\phi_\E\neq\phi_\E .
+\]
+Someone asked whether the $\lambda$ could be ``absorbed'' into $\alpha$ some other way, as with complex conjugation. No: we work over $\mathbb{R}$, and in any case this is just evaluating a functional, not a complex inner product.
+
+\textbf{Conclusion:} the map $V\to V^*$ depends on the basis, so there is no canonical isomorphism. Julián added a comment on matrices: a bare matrix does not tell you which basis it is in, or even whether it is a vector, a covector or a tensor, so it hides exactly what we were discussing.
+
+\section*{Problem 3(b): the bidual}
+
+Define $\ev\colon V\to V^{**}$ by $\ev_v(\alpha)=\alpha(v)$. There is no basis anywhere in the definition. Using the dual property twice,
+\[
+  \pair{T^{**}\ev_v}{\alpha}=\pair{\ev_v}{T^*\alpha}=\pair{\alpha}{Tv}=\pair{\ev_{Tv}}{\alpha}
+  \quad\Longrightarrow\quad T^{**}\circ\ev=\ev\circ T
+\]
+for every linear $T$, not just isometries. (Someone asked whether $T^{**}$ means applying $T$ twice. No: it is a single map, the dual of $T^*$.) So $\ev$ is canonical. Since $V$ is finite-dimensional, it is an isomorphism and $T^{**}=T$. This part took a while: a lot of the confusion was between $\ev$ (a map $V\to V^{**}$) and $\ev_v$ (a map $V^*\to\mathbb{R}$).
+
+We also discussed what happens in infinite dimensions (example: polynomials). There $\ev(V)$ is only a subspace of $V^{**}$.\footnote{$\ev$ is still canonical in infinite dimensions; what fails is that it is no longer onto.}
+
+\section*{Conclusions and next session}
+
+Before the conclusions, Julián noted that Problem 3 took about a session and a half and that we did not get to quadratic spaces. He is working with the director on a more realistic plan. Then we went over the conclusions together:
+
+\begin{enumerate}
+  \item The main takeaway: the dual basis transforms with $(T^{-1})^*$ as a consequence of the duality relation.
+  \item There is no canonical $V\cong V^*$ (it only works for isometries), while $V\cong V^{**}$ is canonical. The bidual is more of a bonus.
+  \item Why this matters physically: velocities live in $V$ and momenta in $V^*$, so $\vec p=m\vec v$ cannot be literally true. We need extra structure (a bilinear form) to go from one to the other. That is where $b^\flat$ and $b^\sharp$ come in.
+\end{enumerate}
+
+\textbf{For next time:} try Problem 4 ($p=m\,b^\flat(v)$, $b^\sharp$ and $H=\tfrac{1}{2m}b^*(p,p)$).
+
+\end{document}
