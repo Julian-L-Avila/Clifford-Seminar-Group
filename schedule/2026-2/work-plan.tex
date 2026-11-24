@@ -1,0 +1,262 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{caption}
+\captionsetup[table]{position=top,skip=6pt,labelfont=bf,font=small}
+\usepackage{enumitem}
+\setlist[description]{style=unboxed}
+\usepackage{microtype}
+\usepackage[
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black
+]{hyperref}
+\usepackage[capitalize,noabbrev]{cleveref}
+
+\newcommand{\Cl}{\mathcal{C}\ell}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\title{\Large\bfseries Work Plan: Linear Spaces, Symmetries, and Clifford
+  Algebras\\
+  in Theoretical Physics}
+\author{Clifford Seminar Group\\
+  \small Universidad Distrital Francisco Jos\'{e} de Caldas}
+\date{November 2026}
+
+\begin{document}
+
+\maketitle
+
+\section{Conceptual Scope and Objective}
+\label{sec:scope}
+
+This work plan outlines a problem-driven study of the algebraic structures
+underlying theoretical and mathematical physics. Rather than treating abstract
+algebra in isolation, each mathematical formalism is introduced as the natural
+tool required to solve and clarify a fundamental physical problem.
+
+The progression begins with coordinate-free linear spaces and spectral
+decomposition, applying them to decouple finite systems of coupled harmonic
+oscillators before passing to infinite-dimensional function spaces to show how
+the classical wave equation decomposes into an infinite family of independent
+harmonic oscillators. It then examines how continuous symmetries of quadratic
+linear spaces generate Lie algebras, and how completing a quadratic linear
+space into a universal Clifford algebra $\Cl(V,q)$ embeds the Lie algebra
+$\mathfrak{so}(p,q)$ directly within the subspace of bivectors. This machinery
+is subsequently applied to unravel the hidden $\mathrm{SO}(4)$ dynamical
+symmetry of the Kepler central force problem and the algebraic structure of
+relativistic field equations in Minkowski spacetime.
+
+\section{Thematic Modules and Problem Progression}
+\label{sec:modules}
+
+\subsection{Module I: The Linear Space Backbone and Oscillatory Systems}
+\label{subsec:mod1}
+
+\begin{description}
+  \item[Topic 1: Linear Spaces, Dual Pairings, and Metric Structure.]
+    Axiomatic formulation of linear spaces $V$ over $\R$ and $\C$ without
+    reference to coordinate bases or matrices. Construction of the dual linear
+    space $V^{*}$, canonical bilinear pairings, and the structural distinction
+    between vectors and covectors in physical measurements. Introduction of
+    symmetric bilinear forms, quadratic forms $q(v)$, the polarization
+    identity, and metric signature $(p,q)$ as the geometric foundation of
+    Euclidean space and relativistic spacetime.
+
+  \item[Topic 2: Spectral Theory and Coupled Harmonic Oscillators.]
+    Linear operators $T \in \mathcal{L}(V)$, invariant subspaces, and adjoint
+    operators defined through the non-degenerate bilinear form. Proof of the
+    spectral theorem for self-adjoint operators via invariant subspaces rather
+    than determinants.
+    \emph{Guiding Problem:} Formulation of $N$ coupled harmonic oscillators
+    $\ddot{u} + Ku = 0$ as an operator equation on a finite-dimensional linear
+    space, showing how orthogonal projections onto invariant eigenspaces
+    decouple the dynamics into independent normal modes.
+
+  \item[Topic 3: Infinite-Dimensional Spaces and the Wave Equation.]
+    Extension of linear space concepts from discrete oscillator lattices to
+    infinite-dimensional function spaces equipped with an integral inner
+    product. The Fourier transformation as a unitary change of basis that
+    diagonalizes translation-invariant differential operators.
+    \emph{Guiding Problem:} Spectral decomposition of the classical wave
+    equation $(\partial_{t}^{2} - c^{2}\nabla^{2})\Phi = 0$ and the
+    Klein--Gordon equation, proving that in momentum space a continuous field
+    is isomorphic to an infinite collection of decoupled harmonic oscillators
+    $\ddot{\tilde{\Phi}}_{k} + \omega_{k}^{2}\tilde{\Phi}_{k} = 0$.
+\end{description}
+
+\subsection{Module II: Continuous Symmetries, Lie Algebras, and Clifford
+  Algebras}
+\label{subsec:mod2}
+
+\begin{description}
+  \item[Topic 4: Infinitesimal Transformations and Lie Algebras.]
+    One-parameter continuous groups of transformations preserving the quadratic
+    form $q(v)$ on a linear space. Generation of finite transformations via the
+    operator exponential $\exp(\theta A)$ and the conservation requirement of
+    skew-adjointness $A^{\dagger} = -A$. Emergence of the Lie bracket
+    $[A,B] = AB - BA$ from the failure of transformations to commute, the
+    Jacobi identity, and the derivation of the Lie algebras $\mathfrak{so}(3)$
+    and $\mathfrak{su}(2)$ from rotational invariance.
+
+  \item[Topic 5: The Universal Clifford Algebra of a Quadratic Space.]
+    Motivation from the algebraic limitation of a bare linear space, where
+    vectors cannot be multiplied directly to encode both projection and planar
+    orientation. Construction of the universal Clifford algebra $\Cl(V,q)$ as
+    the quotient of the tensor algebra $T(V)$ by the two-sided ideal
+    $I_{q} = \langle v \otimes v - q(v)1 \rangle$. Decomposition of the
+    geometric product $uv = u \cdot v + u \wedge v$, $\Z_{2}$-grading,
+    multivector blade projections, grade involution $\hat{u}$, and reversion
+    $\tilde{u}$.
+
+  \item[Topic 6: Bivector Lie Algebras, Rotors, and Spin Groups.]
+    Demonstration that the grade-2 subspace of bivectors $\Cl^{2}(V,q)$ closes
+    under the commutator product $A \times B = \frac{1}{2}(AB - BA)$ and is
+    isomorphic to the orthogonal Lie algebra $\mathfrak{so}(p,q)$.
+    Exponentiation of simple bivectors into rotors
+    $R = \exp(-B/2) \in \mathrm{Spin}(p,q)$, coordinate-free orthogonal
+    transformations via the double-sided action $v \mapsto Rv\tilde{R}$, and
+    the topological double cover $\mathrm{Spin}(3) \cong \mathrm{SU}(2) \to
+    \mathrm{SO}(3)$ without matrix representations.
+\end{description}
+
+\subsection{Module III: Central Force Dynamics and the
+  \texorpdfstring{$\mathrm{SO}(4)$}{SO(4)} Kepler Symmetry}
+\label{subsec:mod3}
+
+\begin{description}
+  \item[Topic 7: Central Forces and the Angular Momentum Bivector.]
+    Formulation of Newtonian mechanics in the Euclidean Clifford algebra
+    $\Cl(3,0)$ for an isotropic central interaction
+    $\dot{p} = -f((r^{2})^{1/2})r$. Replacement of the axial cross-product
+    vector by the intrinsic orbital angular momentum bivector $L = r \wedge p$
+    representing the oriented orbital plane. Coordinate-free proof of
+    $\dot{L} = 0$, the exterior condition for planar motion $r \wedge L = 0$,
+    and duality via the Euclidean pseudoscalar $I_{3}$.
+
+  \item[Topic 8: The Kepler Problem and the Laplace--Runge--Lenz Invariant.]
+    Specialization to the inverse-square interaction
+    $\dot{p} = -k(r^{2})^{-3/2}r$. Direct geometric multiplication of linear
+    momentum and the angular momentum bivector $pL = p \cdot L + p \wedge L$ to
+    isolate the conserved Laplace--Runge--Lenz vector
+    $A = \frac{1}{mk}pL - (r^{2})^{-1/2}r$. Derivation of $\dot{A} = 0$, the
+    coplanarity relation $A \wedge L = 0$, and immediate algebraic extraction
+    of conic sections from the inner contraction $r \cdot A$.
+
+  \item[Topic 9: Hidden $\mathrm{SO}(4)$ Dynamical Symmetry.]
+    Analysis of the algebraic brackets between the components of the angular
+    momentum bivector $L$ and the rescaled Laplace--Runge--Lenz vector $A$ on
+    bound-state energy manifolds. Decoupling of the conserved generators into
+    two commuting $\mathfrak{su}(2)$ algebras, establishing the dynamical
+    symmetry $\mathfrak{so}(4) \cong \mathfrak{su}(2) \oplus \mathfrak{su}(2)$
+    responsible for closed trajectories and spectral degeneracy, alongside a
+    comparison with the dynamical symmetry of the isotropic harmonic
+    oscillator.
+\end{description}
+
+\subsection{Module IV: Relativistic Field Equations in Spacetime Algebra}
+\label{subsec:mod4}
+
+\begin{description}
+  \item[Topic 10: Spacetime Algebra $\Cl(1,3)$ and Lorentz Symmetries.]
+    Construction of the Clifford algebra of Minkowski spacetime with signature
+    $(+,-,-,-)$ generated by $\{\gamma_{\mu}\}$. The observer-dependent
+    spacetime split induced by a timelike vector $\gamma_{0}$, mapping
+    spacetime bivectors into relative spatial vectors
+    $\sigma_{k} = \gamma_{k}\gamma_{0}$ and spatial bivectors
+    $I_{4}\sigma_{k}$. Unification of spatial rotations and relativistic boosts
+    as rotor transformations $x \mapsto Rx\tilde{R}$ generated by the
+    six-dimensional bivector Lie algebra
+    $\Cl^{2}(1,3) \cong \mathfrak{so}(1,3)$.
+
+  \item[Topic 11: Electrodynamics and Relativistic Field Oscillators.]
+    Introduction of the coordinate-free spacetime vector derivative
+    $\nabla = \gamma^{\mu}\partial_{\mu}$ satisfying
+    $\nabla^{2} = \partial_{t}^{2} - \nabla_{\mathrm{spatial}}^{2}$. Synthesis
+    of the electric vector field and magnetic bivector field into a single
+    Faraday bivector $F = E + I_{4}B$, condensing the four Maxwell equations
+    into the single multivector equation $\nabla F = J$. Application of the
+    Module I Fourier mode expansion to the free-field equation $\nabla F = 0$,
+    decomposing the electromagnetic field into relativistic harmonic
+    oscillators.
+
+  \item[Topic 12: Algebraic Foundations of the Relativistic Dirac Field.]
+    First-order factorization of the relativistic Klein--Gordon wave operator
+    $\nabla^{2}\Psi = -m^{2}\Psi$ using the geometric product of the spacetime
+    derivative. Representation of relativistic spinor fields within the real
+    even subalgebra $\Cl^{+}(1,3)$, demonstrating how complex phase
+    transformations correspond geometrically to rotations generated by the
+    spin-plane bivector $\gamma_{2}\gamma_{1}$.
+\end{description}
+
+\section{Summary of the Problem-Driven Progression}
+\label{sec:summary}
+
+A synthesis of the twelve topics, pairing each mathematical structure with its
+corresponding physical problem, is presented in \cref{tab:summary}.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Synthesis of mathematical structures and guiding physical problems.}
+  \label{tab:summary}
+  \small
+  \renewcommand{\arraystretch}{1.25}
+  \begin{tabularx}{\textwidth}{%
+    @{}%
+    c%
+    c%
+    >{\raggedright\arraybackslash}p{4.8cm}%
+    >{\raggedright\arraybackslash}X%
+    @{}%
+  }
+    \toprule
+    Topic & Module & Mathematical Structure & Guiding Physical Problem \\
+    \midrule
+    1  & I   & Linear spaces, duals, quadratic forms &
+      Metric geometry of physical states and observables \\
+    2  & I   & Self-adjoint operators, spectral theorem &
+      Decoupling $N$ coupled harmonic oscillators into normal modes \\
+    3  & I   & Function spaces, Fourier diagonalization &
+      Wave equation $(\partial_{t}^{2} - c^{2}\nabla^{2})\Phi = 0$ as infinite
+      harmonic oscillators \\
+    \midrule
+    4  & II  & Exponential map, commutators, Lie algebras &
+      Continuous rotational invariance and $\mathfrak{so}(3) \cong
+      \mathfrak{su}(2)$ \\
+    5  & II  & Quotient tensor algebra $\Cl(V,q)$ &
+      Unifying metric projection and planar orientation in products of
+      vectors \\
+    6  & II  & Bivector algebra $\Cl^{2}(V,q)$, $\mathrm{Spin}(p,q)$ &
+      Coordinate-free spatial rotations $v \mapsto Rv\tilde{R}$ and spinor
+      double cover \\
+    \midrule
+    7  & III & Exterior product and bivector conservation &
+      Central force dynamics $\dot{p} = -f((r^{2})^{1/2})r$ and planar
+      confinement $L = r \wedge p$ \\
+    8  & III & Geometric product $pL = p \cdot L + p \wedge L$ &
+      Inverse-square Kepler problem and Laplace--Runge--Lenz invariant $A$ \\
+    9  & III & Lie bracket closure on energy manifolds &
+      Hidden $\mathfrak{so}(4) \cong \mathfrak{su}(2) \oplus \mathfrak{su}(2)$
+      symmetry and harmonic oscillator duality \\
+    \midrule
+    10 & IV  & Minkowski Clifford algebra $\Cl(1,3)$ &
+      Lorentz boosts, spatial rotations, and observer spacetime split \\
+    11 & IV  & Vector derivative $\nabla$ and Faraday bivector $F$ &
+      Unification of Maxwell equations $\nabla F = J$ and radiation modes \\
+    12 & IV  & Even subalgebra $\Cl^{+}(1,3)$ &
+      Factorization of the relativistic wave operator and the Dirac field \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\end{document}
