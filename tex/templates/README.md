@@ -86,4 +86,4 @@ Load the package with one of:
 
 ### Shared Mathematical Macros
 
-`\Cl`, `\R`, `\C`, `\Q`, `\Z`, `\N`, `\K`, `\ev`, `\rad`, `\Hom`, `\End`, `\id`, `\tr`, `\Span`, `\Spin`, `\Pin`, `\SO`, `\SU`, `\pair{a}{b}`, `\grade{A}{k}`, `\rev{u}`, `\ginv{u}`, `\clconj{u}`, `\dd`. All are defined with `\providecommand` so documents can override any symbol cleanly if needed.
+`\Cl`, `\R`, `\C`, `\Q`, `\Z`, `\N`, `\K`, `\ev`, `\rad`, `\Hom`, `\End`, `\id`, `\tr`, `\Span`, `\Spin`, `\Pin`, `\SO`, `\SU`, `\pair{a}{b}`, `\grade{A}{k}` (or `\grade{A}` for the scalar projection), `\lc`, `\rc`, `\rev{u}`, `\ginv{u}`, `\clconj{u}`, `\dd`. All are defined with `\providecommand` so documents can override any symbol cleanly if needed.
