@@ -27,7 +27,7 @@
   $q : V \to \R$ for measurement, while its tensor algebra $T(V)$ carries
   unconstrained multilinear excess.
   In this single-session meeting we quotient $T(V)$ by
-  $\mathcal{I}_q = \langle v \otimes v - q(v)1 \rangle$ to build the universal
+  $\mathcal{I}_q = ( v \otimes v - q(v)1 )$ to build the universal
   Clifford algebra $\Cl(V,q)$, unpack $uv = u \lc v + u \wedge v$ via
   $\Cl_{1,0}$ and $\Cl_{0,1}$, derive the $\Z_2$-grading and three canonical
   involutions from universality, and use involution parity to induce quadratic
@@ -77,8 +77,8 @@ tensor algebra ($1 \in T^0(V) = \R$).
   Setting
   \begin{equation}
     \label{eq:clifford-ideal}
-    \mathcal{I}_q := \left\langle v \otimes v - q(v) 1 \;\middle|\; v \in V
-    \right\rangle \subset T(V), \qquad
+    \mathcal{I}_q := \left( v \otimes v - q(v) 1 \;\middle|\; v \in V
+    \right) \subset T(V), \qquad
     \Cl(V, q) := T(V) / \mathcal{I}_q,
   \end{equation}
   defines the \emph{universal Clifford algebra} of $(V, q)$, equipped with the
@@ -157,12 +157,12 @@ $\Cl_{1,0} = \Cl(\R^{1,0})$ ($e_1^2 = +1$) versus $\Cl_{0,1} = \Cl(\R^{0,1})$
       \textbf{Structure \& Geometric Role} \\
     \midrule
     $\Cl_{1,0}$ & $e_1^2 = +1$ &
-      $\R[x]/\langle x^2 - 1\rangle \cong \R \oplus \R$ &
+      $\R[x]/(x^2 - 1) \cong \R \oplus \R$ &
       Split-complex (hyperbolic) numbers; non-simple with idempotents
       $P_\pm = \tfrac{1}{2}(1 \pm e_1)$ ($P_+ P_- = 0$, zero divisors) and
       $u\clconj{u} = a^2 - b^2$. \\
     $\Cl_{0,1}$ & $e_1^2 = -1$ &
-      $\R[x]/\langle x^2 + 1\rangle \cong \C$ &
+      $\R[x]/(x^2 + 1) \cong \C$ &
       Complex field (simple division algebra); $e_1$ acts as $i$ and models the
       even rotation subalgebra $\Cl^+_{2,0} \cong \C$ of planar Kepler orbits
       ($e^{\theta \hat{B}}$). \\
@@ -220,13 +220,14 @@ Their action on a homogeneous $k$-blade $A_k \in \Cl^k(V, q) \cong
 \end{table}
 
 \begin{keyresult}[Involution Parity and Induced Quadratic Norms]
-  Let $\grade{\cdot}{0} : \Cl(V, q) \to \R$ denote the scalar projection.
+  Let $\grade{\cdot} : \Cl(V, q) \to \R$ denote the scalar projection (grade-$0$
+  part, omitting the subscript when $k = 0$).
   The two anti-automorphisms induce canonical quadratic forms on $\Cl(V, q)$
   \cite[Sec.~3.3]{vazIntroductionCliffordAlgebras2016}:
   \begin{equation}
     \label{eq:involution-norms}
-    N_{\sim}(A) := \grade{A\rev{A}}{0}, \qquad
-    N_{-}(A) := \grade{A\clconj{A}}{0}, \qquad
+    N_{\sim}(A) := \grade{A\rev{A}}, \qquad
+    N_{-}(A) := \grade{A\clconj{A}}, \qquad
     N_{-}(A_k) = (-1)^k N_{\sim}(A_k),
   \end{equation}
   linked on every $k$-blade by the $\Z_2$-parity sign $(-1)^k$ from
@@ -271,7 +272,7 @@ Their action on a homogeneous $k$-blade $A_k \in \Cl^k(V, q) \cong
 % =============================================================================
 
 \begin{thesis}[Metric Quotients Over Free Multilinearity]
-  Factoring $T(V)$ by $\mathcal{I}_q = \langle v \otimes v - q(v)1 \rangle$ is
+  Factoring $T(V)$ by $\mathcal{I}_q = ( v \otimes v - q(v)1 )$ is
   the minimal algebraic act turning a linear space into a metric algebra; by
   universality, $\C$, $\mathbb{H}$, and Pauli matrices are homomorphic shadows
   of a single invariant structure.
@@ -302,8 +303,8 @@ the session.
 \begin{enumerate}[itemsep=0.2em, topsep=0.3em]
   \item \textbf{One-Dimensional Quotients and Zero Divisors.}
     Identify $T(\R) \cong \R[x]$ and construct $\Cl_{1,0} \cong
-    \R[x]/\langle x^2 - 1\rangle$ and $\Cl_{0,1} \cong
-    \R[x]/\langle x^2 + 1\rangle$.
+    \R[x]/(x^2 - 1)$ and $\Cl_{0,1} \cong
+    \R[x]/(x^2 + 1)$.
     In $\Cl_{1,0}$, set $P_\pm := \tfrac{1}{2}(1 \pm e_1)$ and verify
     $P_\pm^2 = P_\pm$, $P_+ + P_- = 1$, and $P_+ P_- = 0$, proving
     $\Cl_{1,0} \cong \R \oplus \R$.

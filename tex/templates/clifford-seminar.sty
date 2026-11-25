@@ -604,7 +604,18 @@
 \providecommand{\SU}{\mathrm{SU}}
 
 \providecommand{\pair}[2]{\langle #1, #2 \rangle}
-\providecommand{\grade}[2]{\langle #1 \rangle_{#2}}
+% \grade{A}{k} -> \langle A \rangle_{k}; \grade{A} -> \langle A \rangle (scalar projection)
+\providecommand{\grade}[1]{\csg@grade{#1}}
+\newcommand{\csg@grade}[1]{%
+  \@ifnextchar\bgroup{\csg@grade@two{#1}}{\langle #1 \rangle}%
+}
+\newcommand{\csg@grade@two}[2]{%
+  \if\relax\detokenize{#2}\relax
+    \langle #1 \rangle%
+  \else
+    \langle #1 \rangle_{#2}%
+  \fi
+}
 \providecommand{\lc}{\mathbin{\rfloor}}
 \providecommand{\rc}{\mathbin{\lfloor}}
 \providecommand{\rev}[1]{\widetilde{#1}}
